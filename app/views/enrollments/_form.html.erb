@@ -1,0 +1,61 @@
+<%- model_class = Enrollment -%>
+
+<%= form_for Enrollment.new(params[:enrollment]), html: { :class => "form-horizontal enrollment" } do |f| %>
+
+  <div class="control-group">
+    <%= f.label :name, class: 'control-label',
+                       value: 'Your full name' %>
+    <%= f.text_field :name, :class => 'form-control' %>
+    <div id="enrollment_name_error" class="input-error-message"></div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :email, class: 'control-label',
+                        value: 'Contact email' %>
+    <%= f.text_field :email, :class => 'form-control' %>
+    <div id="enrollment_email_error" class="input-error-message"></div>
+  </div>
+
+  <div class="control-group">
+    <h3>select track:</h3>
+    <%- Course.pluck(:id, :name).each do |c| %>
+      <div class="opt-radio">
+        <input type="radio" selected="true" name="enrollment[course]" 
+                                            id="enrollment_course_<%= c[0] %>" value="<%= c[0] %>">
+        <label><%= c[1] %></label>
+      </div>
+    <%- end %>
+  </div>
+
+  <div class="control-group">
+    <h3>select pace:</h3>
+    <%- Enrollment::WEEK_OPTIONS.each_with_index do |w, i| %>
+      <div class="opt-radio">
+        <input type="radio" name="enrollment[weeks]" 
+                            id="enrollment_weeks_<%= w %>" value="<%= w %>">
+        <label><%= w %> weeks | <%= Enrollment::PRIVATE_SESSIONS[i] %> private sessions/wk</label>
+      </div>
+    <%- end %>
+  </div>
+
+  <div class="control-group">
+    <h3>I want to</h3>
+    <div class="opt-radio">
+      <input type="radio" name="enrollment[finance]" 
+             id="enrollment_finance_prepay" value="false">
+      <label>Pay <%= number_to_currency(3499) %> up front and save $1000 dollars!</label>
+    </div>
+
+    <div class="opt-radio">
+      <input type="radio" name="enrollment[finance]" 
+      id="enrollment_finance_finance" value="true">
+      <label>Make 6 monthly payments of <%= number_to_currency(4499/6) %> instead</label>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label></label>
+    <%= f.submit "Enroll and continue to the payment page", :class => 'btn btn-block btn-primary' %>
+  </div>
+
+<% end %>
