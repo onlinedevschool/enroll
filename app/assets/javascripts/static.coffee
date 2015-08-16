@@ -1,10 +1,3 @@
-bgs = [{ id: 1, align: 'center' },
-       { id: 2, align: 'left'   },
-       { id: 3, align: 'right'  },
-       { id: 4, align: 'left'   },
-       { id: 5, align: 'left'   },
-       { id: 6, align: 'left'   }]
-
 homeData = [{
   "h1": "No College Degree Required",
   "h2": "Welcome to your new life as a Web Developer",
@@ -38,12 +31,8 @@ homeData = [{
 $(document).ready ->
 
   randBg = Math.floor((Math.random() * 6) + 1)
-  align  = $.grep bgs, (e) ->
-    return e.id == randBg
-  bgCss  = "url(assets/header_bgs/"+randBg+".jpg) no-repeat center top"
-
-  $("#home").css("background", bgCss)
-  $("#home *").css("text-align", align[0]['align'])
+  $("#home").removeClass("person-1 person-2 person-3 person-4 person-5 person-6")
+  $("#home").addClass("person-#{randBg}")
 
   rIndex = Math.floor(Math.random()*homeData.length)
   chosenHomeData = homeData[rIndex]

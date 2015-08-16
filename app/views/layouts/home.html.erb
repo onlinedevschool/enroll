@@ -34,7 +34,6 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-    <%= javascript_include_tag "application" %>
   </head>
   <body>
 
@@ -44,7 +43,7 @@
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
             <a class="navbar-brand" href="#home">
-              <img src="/assets/logo.png" class="logo">Online <strong>Dev</strong> School</a>
+              <img src="<%= asset_path('logo.png') %>" class="logo">Online <strong>Dev</strong> School</a>
           </div>
           <div class="navbar-collapse collapse">
             <ul id="top-menu" class="nav navbar-nav navbar-right">
@@ -63,5 +62,6 @@
 
     <%= render partial: 'footer' %>
     <%= render partial: 'chat' %>
+    <%= javascript_include_tag "application" %>
   </body>
 </html>
