@@ -4,6 +4,7 @@ class CreateEnrollments < ActiveRecord::Migration
       t.string :name
       t.string :email
       t.integer :weeks
+      t.decimal :price
       t.references :course, index: true, foreign_key: true
       t.boolean :financed
 

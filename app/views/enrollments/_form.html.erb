@@ -5,14 +5,14 @@
   <div class="control-group">
     <%= f.label :name, class: 'control-label',
                        value: 'Your full name' %>
-    <%= f.text_field :name, :class => 'form-control' %>
+    <%= f.text_field :name, class: 'form-control' %>
     <div id="enrollment_name_error" class="input-error-message"></div>
   </div>
 
   <div class="control-group">
     <%= f.label :email, class: 'control-label',
                         value: 'Contact email' %>
-    <%= f.text_field :email, :class => 'form-control' %>
+    <%= f.text_field :email, class: 'form-control' %>
     <div id="enrollment_email_error" class="input-error-message"></div>
   </div>
 
@@ -20,8 +20,10 @@
     <h3>select track:</h3>
     <%- Course.pluck(:id, :name).each do |c| %>
       <div class="opt-radio">
-        <input type="radio" selected="true" name="enrollment[course]" 
-                                            id="enrollment_course_<%= c[0] %>" value="<%= c[0] %>">
+        <input type="radio" selected="true"
+               name="enrollment[course_id]" 
+               id="enrollment_course_id_<%= c[0] %>"
+               value="<%= c[0] %>">
         <label><%= c[1] %></label>
       </div>
     <%- end %>
@@ -41,15 +43,15 @@
   <div class="control-group">
     <h3>I want to</h3>
     <div class="opt-radio">
-      <input type="radio" name="enrollment[finance]" 
-             id="enrollment_finance_prepay" value="false">
-      <label>Pay <%= number_to_currency(3499) %> up front and save $1000 dollars!</label>
+      <input type="radio" name="enrollment[pay_option]" 
+             id="enrollment_pay_option_prepay" value="prepay">
+      <label>Pay <%= number_to_currency(Enrollment::BASE_PRICE) %> up front and save $1000 dollars!</label>
     </div>
 
     <div class="opt-radio">
-      <input type="radio" name="enrollment[finance]" 
-      id="enrollment_finance_finance" value="true">
-      <label>Make 6 monthly payments of <%= number_to_currency(4499/6) %> instead</label>
+      <input type="radio" name="enrollment[pay_option]" 
+      id="enrollment_pay_option_payments" value="payments">
+      <label>Make <%= Enrollment::PAYMENT_COUNT %>  monthly payments of <%= number_to_currency(Enrollment::PAYMENT_PRICE) %> instead</label>
     </div>
   </div>
 

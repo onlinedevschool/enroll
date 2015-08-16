@@ -15,6 +15,7 @@
 //= require twitter/bootstrap
 //= require jquery.turbolinks
 //= require masonry.min
+//= require jquery.payment
 //= require smooth-scroll.min
 //= require featherlight.min
 //= require_tree .

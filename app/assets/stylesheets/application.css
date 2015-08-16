@@ -35,3 +35,7 @@ img.logo {
 .padded {
   margin: 3em 0 3em 0;
 }
+
+.full-height {
+  min-width: 80%;
+}

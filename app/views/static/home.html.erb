@@ -15,9 +15,12 @@
 <div id="curriculum" name="curriculum" class="section">
   <div class="row white">
     <div class="container">
-      <h2>Front-end Web Developer <small>(HTML5/CSS &amp; Javascript)</small></h2>
+      <div class="page-header">
+        <h2>Front-end Web Developer <small>(HTML5/CSS &amp; Javascript)</small></h2>
+      </div>
+
       <h3>Complete in only 12-48 weeks depending on your pacing</h3>
-      <h4>Pay $3,499 at enrollment or make 6 payments of $749. Pacing does not effect price.</h4>
+      <h4><%= render 'enrollments/pricing' %></h4>
       <p>In this track you will learn the basic languages the web is written in and build an application of your own
       implementing a mix of modern web development technologies.</p>
 
@@ -30,12 +33,16 @@
         <a href="#" data-featherlight="#lbJs"><img src="/assets/technologies/javascript.png"></a>
         <a href="#" data-featherlight="#lbRuby"><img src="/assets/technologies/ruby.png"></a>
       </div>
+    </div>
+  </div>
 
-      <hr>
-
-      <h2>Back-end Web Developer <small>(Ruby on Rails/SQL)</small></h2>
+  <div class="row white">
+    <div class="container">
+      <div class="page-header">
+        <h2>Back-end Web Developer <small>(Ruby on Rails/SQL)</small></h2>
+      </div>
       <h3>Complete in only 12-48 weeks depending on your pacing</h3>
-      <h4>Pay $3,449 at enrollment or make 6 payments of $749. Pacing does not effect price.</h4>
+      <h4><%= render 'enrollments/pricing' %></h4>
       <p>This track focuses on Ruby on Rails, SQL, Javascript and software design
           patterns and principles. A full stack developer needs to take both this
           and the front-end developer course.</p>

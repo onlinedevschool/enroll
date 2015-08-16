@@ -1,6 +1,5 @@
 class EnrollmentsController < ApplicationController
-  skip_before_action :verify_authenticity_token,
-                      only: [:create]
+  respond_to :json
 
   def index
     respond_with(enrollments)
@@ -10,13 +9,9 @@ class EnrollmentsController < ApplicationController
     respond_with(enrollment)
   end
 
-  def new
-    new_enrollment
-  end
-
   def create
     new_enrollment(enrollment_params).save
-    respond_with(enrollment)
+    respond_with(new_enrollment)
   end
 
 private
@@ -34,7 +29,7 @@ private
   end
 
   def enrollment_params
-    params.require(:enrollment).permit(:name, :weeks, :course_id,
-                                       :financed, :email)
+    attrs = %w[email name weeks pay_option course_id]
+    params.require(:enrollment).permit(attrs)
   end
 end
