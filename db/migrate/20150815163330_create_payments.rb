@@ -4,7 +4,7 @@ class CreatePayments < ActiveRecord::Migration
       t.references :enrollment, index: true, foreign_key: true
       t.string  :token
       t.string  :auth_code
-      t.decimal :amount
+      t.integer :amount
 
       t.timestamps null: false
     end

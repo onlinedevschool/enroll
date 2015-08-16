@@ -5,11 +5,14 @@ $(document).ready ->
 
   $("form#new_enrollment").submit (e) ->
     e.preventDefault()
+    button = $("input[type=submit]")
+    button.attr("disabled", "disabled")
     res = $.post "/enrollments.json", $(this).serialize()
     res.done ->
       eId = JSON.parse(res.responseText)['id']
       document.location.href = "/enrollments/#{eId}/payments/new"
     res.fail ->
+      button.removeAttr("disabled")
       errors = JSON.parse(res.responseText)['errors']
       $.each errors, (k, v, i) ->
         $("#enrollment_#{k}").css("border", "1px solid red")

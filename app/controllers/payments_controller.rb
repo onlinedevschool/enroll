@@ -1,5 +1,3 @@
-require 'stripe_payment_resolver'
-
 class PaymentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: %w[index show create]
   respond_to :html, only: %w[new]
@@ -23,7 +21,7 @@ class PaymentsController < ApplicationController
   def create
     attrs = payment_params.merge(amount: enrollment.first_payment_amount)
     new_payment(attrs).save
-    charge(new_payment)
+    new_payment.charge(attrs[:token])
     respond_with(enrollment, new_payment)
   end
 

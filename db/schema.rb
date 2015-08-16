@@ -27,7 +27,8 @@ ActiveRecord::Schema.define(version: 20150815163330) do
     t.string   "name"
     t.string   "email"
     t.integer  "weeks"
-    t.decimal  "price"
+    t.integer  "price"
+    t.string   "stripe_id"
     t.integer  "course_id"
     t.boolean  "financed"
     t.datetime "created_at", null: false
@@ -40,7 +41,7 @@ ActiveRecord::Schema.define(version: 20150815163330) do
     t.integer  "enrollment_id"
     t.string   "token"
     t.string   "auth_code"
-    t.decimal  "amount"
+    t.integer  "amount"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

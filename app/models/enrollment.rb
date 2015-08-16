@@ -50,4 +50,5 @@ class Enrollment < ActiveRecord::Base
   def record_pricing
     write_attribute(:price, total_price)
   end
+
 end
