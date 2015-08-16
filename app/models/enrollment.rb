@@ -12,7 +12,7 @@ class Enrollment < ActiveRecord::Base
   before_create :record_pricing
 
   validates :email,       presence: true,
-                          uniqueness: true,
+                          uniqueness: { case_sensitive: false, message: "has already been registered"},
                           format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
   validates :name,        presence: true
@@ -27,6 +27,13 @@ class Enrollment < ActiveRecord::Base
   validates :financed,    inclusion: { in: [true, false],
                                        message: "must be true or false" }
 
+  def valid?(*args)
+    e = Enrollment.find_by(email: email)
+    if e && e.payments.none?
+      e.destroy
+    end
+    super(args)
+  end
   def pay_option=(val)
     write_attribute(:financed, val == "payments" )
   end

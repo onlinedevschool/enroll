@@ -16,3 +16,4 @@ $(document).ready ->
       errors = JSON.parse(res.responseText)['errors']
       $.each errors, (k, v, i) ->
         $("#enrollment_#{k}").css("border", "1px solid red")
+        $("#enrollment_#{k}_error").html("That #{k} #{v[0]}")

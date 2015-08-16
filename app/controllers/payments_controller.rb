@@ -43,11 +43,6 @@ private
     @payment ||= enrollment.payments.build(attrs)
   end
 
-  def charge(payment)
-    charge = StripePaymentResolver.charge(enrollment, payment)
-    payment.update_attributes(auth_code: charge.id)
-  end
-
   def payment_params
     attrs = %w[token]
     params.require(:payment).permit(attrs)

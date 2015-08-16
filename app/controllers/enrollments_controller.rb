@@ -10,9 +10,7 @@ class EnrollmentsController < ApplicationController
   end
 
   def create
-    stripe_id = Stripe::Customer.create(email: enrollment_params[:email]).id
-    attrs = enrollment_params.merge(stripe_id: stripe_id)
-    new_enrollment(attrs).save
+    new_enrollment(enrollment_params).save
     respond_with(new_enrollment)
   end
 
