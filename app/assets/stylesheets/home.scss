@@ -13,8 +13,6 @@ hr {
   border: none;
 }
 
-
-
 #home {
   padding-top: 3em;
   text-align: center;
@@ -30,13 +28,21 @@ hr {
   -o-background-size: cover;
   background-size: cover;
   padding-bottom: 100px;
-  margin-top: 4em;
+  margin-top: 2em;
   color: #090909;
 }
 
 #home h1 {
   font-size: 4em;
-  font-weight: 400;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 2px;
+  padding-bottom: 10px;
+}
+
+#home h2 {
+  font-size: 2.1em;
+  font-weight: 500;
   text-align: center;
   letter-spacing: 2px;
   padding-bottom: 10px;
