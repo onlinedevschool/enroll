@@ -1,12 +1,13 @@
 class Payment < ActiveRecord::Base
   belongs_to :enrollment
 
-  def charge(token)
-    set_payment_source
+  def charge(token=nil)
+    set_payment_source if token
     charge = Stripe::Charge.create(
       customer: enrollment.stripe_id,
       currency: 'usd',
-      amount: amount * 100
+      amount: amount * 100,
+      description: "OnlineDevSchool.com"
     )
     update_attribute(:auth_code, charge.id)
   end
