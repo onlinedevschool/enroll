@@ -32,55 +32,64 @@ hr {
   color: #090909;
 }
 
-#home h1 {
-  font-size: 4em;
-  font-weight: 600;
-  text-align: center;
-  letter-spacing: 2px;
-  padding-bottom: 10px;
+#home {
+  h1 {
+    font-size: 4em;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    color: #000;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 2.1em;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    margin: 0.4em 0 1em 0;
+  }
+
+  h4 {
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+  }
+
+  p {
+    margin-top: 0.8em;
+    font-size: 1.8em;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  .article_source {
+    font-weight: 600;
+  }
+  .btn {
+    font-weight: 500;
+    font-size: 17px;
+    margin: 20px 0;
+    background-color: rgba(255,255,255,0);
+    color: #fff;
+    border: 1px solid #fff;
+  }
+  .btn:hover, .btn:focus {
+    color: #555;
+    background-color: #fff;
+    outline: 0px;
+    border: 1px solid #fff;
+  }
+  a {
+    font-weight: 400;
+    text-decoration: underline;
+  }
 }
 
-#home h2 {
-  font-size: 2.1em;
-  font-weight: 500;
-  text-align: center;
-  letter-spacing: 2px;
-  padding-bottom: 10px;
-}
-#home p {
-  margin-top: 0.8em;
-  font-size: 1.8em;
-  font-weight: 300;
-  text-align: center;
-  letter-spacing: 1px;
-}
-#home h4 {
-  font-size: 1em;
-  font-weight: 400;
-  letter-spacing: 1px;
-  padding-bottom: 10px;
-}
-#home .article_source {
-  font-weight: 600;
-}
-#home .btn {
-  font-weight: 500;
-  font-size: 17px;
-  margin: 20px 0;
-  background-color: rgba(255,255,255,0);
-  color: #fff;
-  border: 1px solid #fff;
-}
-#home .btn:hover, #home .btn:focus {
-  color: #555;
-  background-color: #fff;
-  outline: 0px;
-  border: 1px solid #fff;
-}
-#home a {
-  font-weight: 400;
-  text-decoration: underline;
-}
 
 #reviews p, #curriculum p, #pacing p {
   font-size: 1.4em;
@@ -89,18 +98,16 @@ hr {
 }
 
 #howitworks {
-  background: #2b2b2b !important;
-}
+  h2 {
+    margin: 2em 0 1em 0;
+  }
 
-#howitworks h2 {
-  margin: 2em 0 1em 0;
-}
-
-#howitworks li {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-size: 1.4em;
-  font-weight: 300;
-  line-height: 1.6em;
+  li {
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-size: 1.4em;
+    font-weight: 300;
+    line-height: 1.6em;
+  }
 }
 
 .pace-options-table {
@@ -130,11 +137,6 @@ hr {
 #reviews {
   color: #2b2b2b;
 }
-
-#curriculum .row {
-  padding: 4em 0;
-}
-
 
 #home .well {
   background-color:rgba(255,255,255,0.8);
@@ -222,24 +224,10 @@ hr {
   margin: 1em;
 }
 
-#curriculum {
-  color: #000;
+.row {
+  padding: 2em 0;
 }
 
-#curriculum h3 {
-  font-size: 2em;
-  font-weight: 500;
-  color: #000;
-}
-
-#curriculum a {
-  color: #cf1818;
-  text-decoration: underline;
-}
-
-#curriculum h2, #curriculum h3 {
-  font-family: 'Lato'
-}
 
 .technologies img {
   width: 150px; 

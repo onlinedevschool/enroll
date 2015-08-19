@@ -2,12 +2,18 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 200;
   color: #555;
 }
+
+h1 {
+  margin: 1em 0 1.5em;
+}
+
 h2 {
   font-size: 2.5em;
-  font-weight: 600;
-  color: #000;
+  font-weight: 500;
+  margin: 1em 0 1.5em;
 }
+
 h3 {
-  font-size: 24px;
+  font-size: 2em;
   font-weight: 500;
 }
