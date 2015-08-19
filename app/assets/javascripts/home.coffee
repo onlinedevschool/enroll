@@ -29,7 +29,9 @@ homeData = [{
 }]
 
 $(document).ready ->
-  return unless $("#home.section")
+  # none of this is valid on any other page
+  return unless $("#home.section").length == 0
+
   randBg = Math.floor((Math.random() * 6) + 1)
   $("#home").removeClass("person-1 person-2 person-3 person-4 person-5 person-6")
   $("#home").addClass("person-#{randBg}")
