@@ -1,16 +1,20 @@
-<div id="navbar-main"> 
-  <div class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <a class="navbar-brand" href="/">
-            <img src="<%= asset_path('logo.png') %>" class="logo">Online <strong>Dev</strong> School</a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul id="top-menu" class="nav navbar-nav navbar-right">
-          <li><a href="/">home</a></li>
-        </ul>
+    <div id="navbar-main"> 
+      <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="/#home">
+              <img src="<%= asset_path('logo.png') %>" class="logo">Online <strong>Dev</strong> School</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul id="top-menu" class="nav navbar-nav navbar-right">
+              <li><a data-scroll href="/#home">home</a></li>
+              <li><a data-scroll href="/#curriculum">our curriculum</a></li>
+              <li><a data-scroll href="/#howitworks">how it works</a></li>
+              <li><a data-scroll href="/#reviews">reviews</a></li>
+              <li><a class="btn-danger btn enroll" data-scroll href="/#enroll">enroll today</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>

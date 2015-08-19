@@ -17,7 +17,7 @@ hr {
   padding-top: 3em;
   text-align: center;
   background-attachment: relative;
-  min-height: 90%;
+  min-height: 92%;
   width: 100%;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
@@ -314,4 +314,8 @@ ul.checks li {
 }
 .person-6 {
   background: image-url('header_bgs/6.jpg') no-repeat center top; 
+}
+
+img.courseware-img {
+  max-width: 200px;
 }
