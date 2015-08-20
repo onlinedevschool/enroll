@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150815163330) do
+ActiveRecord::Schema.define(version: 20150820043349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "affiliate_sales", force: :cascade do |t|
+    t.integer  "enrollment_id"
+    t.integer  "affiliate_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "affiliate_sales", ["affiliate_id"], name: "index_affiliate_sales_on_affiliate_id", using: :btree
+  add_index "affiliate_sales", ["enrollment_id"], name: "index_affiliate_sales_on_enrollment_id", using: :btree
+
+  create_table "affiliates", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string   "name"
@@ -48,6 +66,8 @@ ActiveRecord::Schema.define(version: 20150815163330) do
 
   add_index "payments", ["enrollment_id"], name: "index_payments_on_enrollment_id", using: :btree
 
+  add_foreign_key "affiliate_sales", "affiliates"
+  add_foreign_key "affiliate_sales", "enrollments"
   add_foreign_key "enrollments", "courses"
   add_foreign_key "payments", "enrollments"
 end

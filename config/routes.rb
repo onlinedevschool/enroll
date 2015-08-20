@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :affiliate_landings
   root to: "home#index"
 
   get "/sitemap", controller: :sitemap,

@@ -22,6 +22,7 @@ class PaymentsController < ApplicationController
     attrs = payment_params.merge(amount: enrollment.first_payment_amount)
     new_payment(attrs).save
     new_payment.charge(attrs[:token])
+    AffiliateSale.track(cookies, enrollment)
     respond_with(enrollment, new_payment)
   end
 
