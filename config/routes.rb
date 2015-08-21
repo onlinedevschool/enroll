@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   get "/sitemap", controller: :sitemap,
-                  action: :our_story
+                  action: :index
 
   with_options controller: :static do
     get "/our-story",  action: :our_story

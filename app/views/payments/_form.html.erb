@@ -41,4 +41,18 @@
       <%= number_to_currency(@amount) %> now</button>
     </div>
   </div>
+  <div class='col-xs-12 form-row'>
+    <div class='form-group'>
+      <p>
+      <img height="60" align="right" src='<%= asset_path("powered_by_stripe.png") %>'>
+      <img height="60" src='<%= asset_path("https.jpg") %>'>
+      <img height="60" src='<%= asset_path("ssl.png") %>'>
+      </p>
+
+      <p class="small">All payments are handled by <a href="https://stripe.com" rel="nofollow">Stripe</a> and at no time do we store
+      your card on our servers. When you click this button we send the form data off to
+      <a href="https://stripe.com" rel="nofollow">Stripe</a> directly,
+      via an SSL connection! You can verify SSL by a lock in your browser.</p>
+    </div>
+  </div>
 <% end %>
