@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820043349) do
+ActiveRecord::Schema.define(version: 20150902184517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,26 +34,16 @@ ActiveRecord::Schema.define(version: 20150820043349) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "courses", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "enrollments", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.integer  "weeks"
     t.integer  "price"
     t.string   "stripe_id"
-    t.integer  "course_id"
     t.boolean  "financed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "enrollments", ["course_id"], name: "index_enrollments_on_course_id", using: :btree
 
   create_table "payments", force: :cascade do |t|
     t.integer  "enrollment_id"
@@ -68,6 +58,5 @@ ActiveRecord::Schema.define(version: 20150820043349) do
 
   add_foreign_key "affiliate_sales", "affiliates"
   add_foreign_key "affiliate_sales", "enrollments"
-  add_foreign_key "enrollments", "courses"
   add_foreign_key "payments", "enrollments"
 end

@@ -29,7 +29,7 @@ private
   end
 
   def enrollment_params
-    attrs = %w[email name weeks pay_option course_id]
+    attrs = %w[email name weeks pay_option]
     params.require(:enrollment).permit(attrs)
   end
 end

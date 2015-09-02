@@ -6,7 +6,6 @@ class Enrollment < ActiveRecord::Base
   BASE_PRICE       = 3499
   PAYMENT_PRICE    = (BASE_PRICE + FINANCE_FEE) / PAYMENT_COUNT
 
-  belongs_to :course
   has_many   :payments
 
   scope :billable, -> {
@@ -30,9 +29,6 @@ class Enrollment < ActiveRecord::Base
                           inclusion: { in: WEEK_OPTIONS,
                                        message: "must be one of #{WEEK_OPTIONS.join(', ')}" }
 
-  validates :course_id,   presence: true,
-                          numericality: true
-
   validates :financed,    inclusion: { in: [true, false],
                                        message: "must be true or false" }
 
@@ -52,7 +48,7 @@ class Enrollment < ActiveRecord::Base
   end
 
   def total_price
-    financed? ? course.price + FINANCE_FEE : course.price
+    financed? ? BASE_PRICE + FINANCE_FEE : BASE_PRICE
   end
 
   def first_payment_amount

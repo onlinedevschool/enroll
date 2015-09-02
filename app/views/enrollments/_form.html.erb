@@ -17,19 +17,6 @@
   </div>
 
   <div class="control-group">
-    <h3>select track:</h3>
-    <%- Course.pluck(:id, :name).each do |c| %>
-      <div class="opt-radio">
-        <input type="radio" selected="true"
-               name="enrollment[course_id]" 
-               id="enrollment_course_id_<%= c[0] %>"
-               value="<%= c[0] %>">
-        <label><%= c[1] %></label>
-      </div>
-    <%- end %>
-  </div>
-
-  <div class="control-group">
     <h3>select pace:</h3>
     <%- Enrollment::WEEK_OPTIONS.each_with_index do |w, i| %>
       <div class="opt-radio">

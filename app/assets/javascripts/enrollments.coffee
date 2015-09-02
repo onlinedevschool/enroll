@@ -1,5 +1,4 @@
 $(document).ready ->
-  $("input#enrollment_course_id_1").prop("checked", true)
   $("input#enrollment_weeks_12").prop("checked", true)
   $("input#enrollment_pay_option_prepay").prop("checked", true)
 
