@@ -2,25 +2,23 @@
 <meta itemprop="name" content="<%= @site_name %>">
 <meta itemprop="description" content="<%= @site_description %>">
 <meta itemprop="image" content="<%= @site_share_image %>">
+<meta itemprop="headline" content="<%= @site_title %>">
+<meta itemprop="datePublished" content="<%= 2.days.ago.to_s(:db) %>">
 
 <!-- Twitter Card data -->
-<meta name="twitter:card" content="<%= @site_share_image %>">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@onlinedevschool">
+<meta name="twitter:creator" content="@onlinedevschool">
+<meta name="twitter:url" content="<%= @site_url %>">
 <meta name="twitter:title" content="<%= @site_title %>">
 <meta name="twitter:description" content="<%= @site_description %>">
-<meta name="twitter:creator" content="@onlinedevschool">
 <!-- Twitter summary card with large image must be at least 280x150px -->
-<meta name="twitter:image:src" content="<%= @site_share_image %>">
+<meta name="twitter:image" content="<%= @site_share_image %>">
 
 <!-- Open Graph data -->
 <meta property="og:title" content="<%= @site_title %>" />
-<meta property="og:type" content="article" />
+<meta property="og:type" content="school" />
 <meta property="og:url" content="<%= @site_url %>" />
 <meta property="og:image" content="<%= @site_share_image %>" />
 <meta property="og:description" content="<%= @site_description %>" />
 <meta property="og:site_name" content="<%= @site_name %>" />
-<meta property="article:published_time" content="2015-01-14T14:20:00+09:00" />
-<meta property="article:modified_time" content="<%= @site_last_updated %>" />
-<meta property="article:section" content="Homepage" />
-<meta property="article:tag" content="Homepage" />
-<meta property="fb:admins" content="1089256231104556" />

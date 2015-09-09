@@ -13,8 +13,8 @@ class ApplicationController < ActionController::Base
   def set_site_social_vars
     @site_name = "ODS - OnlineDevSchool"
     @site_title = "Welcome to the OnlineDevSchool (ODS) website. Learn to code, change your life!"
-    @site_url = "https://oninedevschool.com"
-    @site_share_image = ActionController::Base.helpers.asset_url("ods-lg-sq.png")
+    @site_url = "https://onlinedevschool.com"
+    @site_share_image = "#{@site_url}/assets/ods-lg-sq.png"
     @site_description = <<-DESCRIPTION.strip_heredoc
     The OnlineDevSchool has one mission. To teach you the skills you need
     to get a job as a technology maker, a web developer, in today's market.

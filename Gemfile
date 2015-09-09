@@ -17,6 +17,8 @@ gem "less-rails"
 # use Bootstrap
 gem 'twitter-bootstrap-rails'
 
+gem "non-stupid-digest-assets"
+
 # Use responders gem in controllers
 gem 'responders'
 
