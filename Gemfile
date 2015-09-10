@@ -19,8 +19,12 @@ gem 'twitter-bootstrap-rails'
 
 gem "non-stupid-digest-assets"
 
+gem "devise"
+
 # Use responders gem in controllers
 gem 'responders'
+
+gem 'rdiscount'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
