@@ -1,0 +1,39 @@
+<div class="post-heading">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-md-offset-1">
+        <h1><%= post.title %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="post-meta">
+        <div class="col-md-2 author-avatar">
+          <%= image_tag(post.author_avatar, 
+                        class: 'img-circle') %>
+        </div>
+        <div class="col-md-4">
+          <div class="author-name"><%= post.author_name %></div>
+          <div class="post-date"><%= post.created_at.to_date.to_s(:short) %></div>
+        </div>
+        <div class="col-md-4">
+          <ul class="list-inline list-share">
+            <li class="heading">Share</li>
+            <li><a class="facebook-svg" href="https://www.facebook.com/sharer/sharer.php?u=<%= escape_javascript(post_url(post.permalink)) %>" target="_blank" title="Facebook"></a></li>
+            <li><a class="twitter-svg" href="https://twitter.com/share?text=<%= escape_javascript(post.title) %>&amp;url=<%= escape_javascript(post_url(post.permalink)) %>" target="_blank" title="Facebook"></a></li>
+            <li><a class="google-plus-svg" href="https://plus.google.com/share?url=<%= escape_javascript(post_url(post.permalink)) %>" target="_blank" title="Facebook"></a></li>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <%= raw post.html %>
+    </div>
+  </div>
+</div>

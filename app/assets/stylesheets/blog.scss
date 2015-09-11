@@ -1,0 +1,116 @@
+body#blog {
+  .post-heading {
+    background-color: #f2ab2c;
+    border-bottom: #bbb;
+    text-align: center;
+
+    h1 {
+      padding: 1em 0 0.5em 0;
+      margin: 1em 0 0.5em 0;
+      color: white;
+      letter-spacing: -0.03em;
+      font-size: 2.8em;
+      line-height: 1.4em;
+      font-weight: 600;
+    }
+  }
+
+  .post-meta {
+    margin: -20px 0 0 0;
+
+    .author-avatar {
+      margin-top: -60px;
+    }
+
+    .author-name {
+      margin: 0 0 0 16px;
+      font-size: 1.4em;
+      line-height: 1em;
+    }
+
+    .post-date {
+      margin: 0 0 0 12px;
+      font-size: 1em;
+      font-weight: 400;
+      color: #666;
+    }
+
+    .list-share {
+      .heading {
+        font-weight: 500;
+        font-size: 1.2em;
+      }
+
+      .google-plus-svg {
+        background-color: #D9534F;
+        background-image: image-url('share-icons/google-plus.svg');
+        background-origin: padding-box;
+        background-size: auto;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        box-sizing: border-box;
+        cursor: auto;
+        display: inline-block;
+        font-size: 18px;
+        height: 36px;
+        line-height: 28px;
+        list-style-image: image-url("share-icons/disc.png");
+        list-style-type: disc;
+        margin-top: 0px;
+        text-align: left;
+        text-decoration: none;
+        vertical-align: middle;
+        width: 36px;
+      }
+      .twitter-svg {
+        background-color: #D9534F;
+        background-image: image-url('share-icons/twitter.svg');
+        background-origin: padding-box;
+        background-size: auto;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        box-sizing: border-box;
+        cursor: auto;
+        display: inline-block;
+        font-size: 18px;
+        height: 36px;
+        line-height: 28px;
+        list-style-image: image-url("share-icons/disc.png");
+        list-style-type: disc;
+        margin-top: 0px;
+        text-align: left;
+        text-decoration: none;
+        vertical-align: middle;
+        width: 36px;
+      }
+
+      .facebook-svg {
+        background-color: #D9534F;
+        background-image: image-url('share-icons/facebook.svg');
+        background-origin: padding-box;
+        background-size: auto;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        box-sizing: border-box;
+        cursor: auto;
+        display: inline-block;
+        font-size: 18px;
+        height: 36px;
+        line-height: 28px;
+        list-style-image: url(https://www.bignerdranch.com/img/disc.png);
+        list-style-type: disc;
+        margin-top: 0px;
+        text-align: left;
+        text-decoration: none;
+        vertical-align: middle;
+        width: 36px;
+      }
+    }
+  }
+}

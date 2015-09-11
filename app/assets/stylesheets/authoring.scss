@@ -1,0 +1,12 @@
+table.author-post-list {
+  width: 100%;
+
+  td {
+    padding: 0.5em;
+  }
+}
+
+textarea#post_markdown {
+  min-height: 400px;
+  padding: 1em;
+}

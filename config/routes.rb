@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
   devise_for :authors
-  resources :posts
+
+  resources :posts, only: [:show, :index]
+  get "/blog/:permalink", controller: :posts,
+                            action: :show
+  get "/blog", controller: :posts,
+                 action: :index
+
+  namespace :authoring do
+    resources :posts
+  end
+  get "/authoring" => "authoring/posts#index"
+
   resources :affiliate_landings
-  root to: "home#index"
 
   get "/sitemap", controller: :sitemap,
                   action: :index
@@ -17,4 +27,6 @@ Rails.application.routes.draw do
   resources :enrollments do
     resources :payments
   end
+
+  root to: "home#index"
 end

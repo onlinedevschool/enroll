@@ -1,25 +1,22 @@
 class PostsController < ApplicationController
-  belongs_to :author, class_name: 'User'
+  layout 'blog'
 
-  def title=(val)
-    write_attribute(:title, val)
-    set_permalink(val)
+  def index
+    recent_posts
   end
 
-  def markdown=(val)
-    write_attribute(:markdown, val)
-    cache_html(val)
+  def show
+    post
   end
 
 private
 
-  def cache_html(val)
-    html = RDiscount.new(val).to_html
-    write_attribute(:html, val)
+  def recent_posts
+    @posts ||= Post.homepage
   end
 
-  def set_permalink(val)
-    return if permalink.present?
-    write_attribute(:permalink, val.parameterize)
+  def post
+    @post ||= Post.find_by(permalink: params[:id])
   end
+
 end
