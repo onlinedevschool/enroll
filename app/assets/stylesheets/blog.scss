@@ -1,6 +1,15 @@
 body#blog {
+  .navbar-nav > li > a.btn-danger {
+    background: #1581F7 !important;
+    border-color: #235388;
+  }
+
+  .clickdesk-ultra .click-desk-closed-container .click-desk-closed-header {
+    background: #C33630 !important;
+  }
+
   .post-heading {
-    background-color: #f2ab2c;
+    background-color: #C33630;
     border-bottom: #bbb;
     text-align: center;
 
@@ -13,6 +22,19 @@ body#blog {
       line-height: 1.4em;
       font-weight: 600;
     }
+  }
+
+  h2 {
+    font-size: 1.6em;
+    line-height: 1.6em;
+    font-weight: 600;
+    margin: 1em 0 1.5em 0;
+    border-bottom: 1px solid #999;
+  }
+
+  p {
+    font-size: 1.3em;
+    line-height: 1.6em;
   }
 
   .post-meta {
@@ -42,55 +64,19 @@ body#blog {
       }
 
       .google-plus-svg {
-        background-color: #D9534F;
         background-image: image-url('share-icons/google-plus.svg');
-        background-origin: padding-box;
-        background-size: auto;
-        border-bottom-left-radius: 50%;
-        border-bottom-right-radius: 50%;
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
-        box-sizing: border-box;
-        cursor: auto;
-        display: inline-block;
-        font-size: 18px;
-        height: 36px;
-        line-height: 28px;
-        list-style-image: image-url("share-icons/disc.png");
-        list-style-type: disc;
-        margin-top: 0px;
-        text-align: left;
-        text-decoration: none;
-        vertical-align: middle;
-        width: 36px;
       }
+
       .twitter-svg {
-        background-color: #D9534F;
         background-image: image-url('share-icons/twitter.svg');
-        background-origin: padding-box;
-        background-size: auto;
-        border-bottom-left-radius: 50%;
-        border-bottom-right-radius: 50%;
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
-        box-sizing: border-box;
-        cursor: auto;
-        display: inline-block;
-        font-size: 18px;
-        height: 36px;
-        line-height: 28px;
-        list-style-image: image-url("share-icons/disc.png");
-        list-style-type: disc;
-        margin-top: 0px;
-        text-align: left;
-        text-decoration: none;
-        vertical-align: middle;
-        width: 36px;
       }
 
       .facebook-svg {
-        background-color: #D9534F;
         background-image: image-url('share-icons/facebook.svg');
+      }
+
+      .icon-svg {
+        background-color: #1581F7;
         background-origin: padding-box;
         background-size: auto;
         border-bottom-left-radius: 50%;
@@ -103,7 +89,7 @@ body#blog {
         font-size: 18px;
         height: 36px;
         line-height: 28px;
-        list-style-image: url(https://www.bignerdranch.com/img/disc.png);
+        list-style-image: image-url("share-icons/disc.png");
         list-style-type: disc;
         margin-top: 0px;
         text-align: left;

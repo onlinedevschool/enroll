@@ -16,6 +16,11 @@ class Authoring::PostsController < ApplicationController
   end
 
   def create
+    if new_post(post_params).save
+      redirect_to authoring_posts_path
+    else
+      render :new
+    end
   end
 
   def update
@@ -32,8 +37,8 @@ private
     @posts ||= Post.all.ordered
   end
 
-  def new_post
-    @post ||= current_author.posts.build
+  def new_post(attrs={})
+    @post ||= current_author.posts.build(attrs)
   end
 
   def post
@@ -41,6 +46,6 @@ private
   end
 
   def post_params
-    params.require(:post).permit(:title, :markdown)
+    params.require(:post).permit(:title, :markdown, :publish)
   end
 end

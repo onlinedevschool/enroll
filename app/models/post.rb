@@ -13,6 +13,10 @@ class Post < ActiveRecord::Base
     published.ordered.limit(6)
   }
 
+  def publish=(val)
+    write_attribute(:published_at, DateTime.now) if val
+  end
+
   def author_name
     author && author.name
   end
