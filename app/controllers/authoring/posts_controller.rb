@@ -15,6 +15,10 @@ class Authoring::PostsController < ApplicationController
     post
   end
 
+  def show
+    post
+  end
+
   def create
     if new_post(post_params).save
       redirect_to authoring_posts_path
@@ -42,7 +46,7 @@ private
   end
 
   def post
-    @post ||= Post.find(params[:id])
+    @post ||= Post.find_by(permalink: params[:id])
   end
 
   def post_params
