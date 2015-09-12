@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-9 col-md-offset-1">
-        <h1><%= post.title %></h1>
+        <h1><%= link_to raw(post.title), post_url(post.permalink), style: "color: white" %></h1>
       </div>
     </div>
   </div>
@@ -16,11 +16,16 @@
           <%= image_tag(post.author_avatar, 
                         class: 'img-circle') %>
         </div>
-        <div class="col-md-4">
-          <div class="author-name"><%= post.author_name %></div>
-          <div class="post-date"><%= post.created_at.to_date.to_s(:short) %></div>
+        <div class="col-md-5">
+          <div class="author-name">
+            <%= link_to post.author_name, post.author_url %>
+          </div>
+          <div class="post-date">
+            <%= post.created_at.to_date.to_s(:short) %>
+            • <%= post.category_name %>
+          </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 pull-right">
           <ul class="list-inline list-share">
             <li class="heading">Share</li>
             <li><a class="icon-svg facebook-svg" href="https://www.facebook.com/sharer/sharer.php?u=<%= escape_javascript(post_url(post.permalink)) %>" target="_blank" title="Facebook"></a></li>

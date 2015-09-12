@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910000818) do
+ActiveRecord::Schema.define(version: 20150912005004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,10 +48,17 @@ ActiveRecord::Schema.define(version: 20150910000818) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "url"
   end
 
   add_index "authors", ["email"], name: "index_authors_on_email", unique: true, using: :btree
   add_index "authors", ["reset_password_token"], name: "index_authors_on_reset_password_token", unique: true, using: :btree
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "enrollments", force: :cascade do |t|
     t.string   "name"
@@ -77,16 +84,18 @@ ActiveRecord::Schema.define(version: 20150910000818) do
 
   create_table "posts", force: :cascade do |t|
     t.integer  "author_id"
-    t.string   "title",        null: false
-    t.string   "permalink",    null: false
-    t.text     "html",         null: false
-    t.text     "markdown",     null: false
+    t.string   "title",                    null: false
+    t.string   "permalink",                null: false
+    t.text     "html",                     null: false
+    t.text     "markdown",                 null: false
     t.datetime "published_at"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "category_id",  default: 1, null: false
   end
 
   add_index "posts", ["author_id"], name: "index_posts_on_author_id", using: :btree
+  add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
 
   add_foreign_key "affiliate_sales", "affiliates"
   add_foreign_key "affiliate_sales", "enrollments"

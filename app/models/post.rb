@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :author
+  belongs_to :category
 
   scope :ordered, -> {
     order( created_at: :desc )
@@ -17,12 +18,20 @@ class Post < ActiveRecord::Base
     write_attribute(:published_at, DateTime.now) if val
   end
 
+  def author_url
+    author && author.url
+  end
+
   def author_name
     author && author.name
   end
 
   def author_avatar
     author && author.gravatar_url
+  end
+
+  def category_name
+    category.name
   end
 
   def published?
