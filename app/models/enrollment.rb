@@ -1,9 +1,9 @@
 class Enrollment < ActiveRecord::Base
   WEEK_OPTIONS     = [12, 18, 36]
   PRIVATE_SESSIONS = [3, 2, 1]
-  FINANCE_FEE      = 1000
+  FINANCE_FEE      = 980
   PAYMENT_COUNT    = 5
-  BASE_PRICE       = 3499
+  BASE_PRICE       = 3999
   PAYMENT_PRICE    = (BASE_PRICE + FINANCE_FEE) / PAYMENT_COUNT
 
   has_many   :payments
