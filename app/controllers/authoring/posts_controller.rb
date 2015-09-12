@@ -46,7 +46,7 @@ private
   end
 
   def post
-    @post ||= Post.find_by(permalink: params[:id])
+    @post ||= Post.fuzzy(params[:id])
   end
 
   def post_params

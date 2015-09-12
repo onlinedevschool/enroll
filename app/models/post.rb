@@ -14,6 +14,12 @@ class Post < ActiveRecord::Base
     published.ordered.limit(6)
   }
 
+  def self.fuzzy(id)
+    by_id = find_by(id: id)
+    return by_id if by_id
+    find_by(permalink: id)
+  end
+
   def publish=(val)
     write_attribute(:published_at, DateTime.now) if val
   end
