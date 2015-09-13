@@ -8,6 +8,20 @@ body#blog {
     background: #C33630 !important;
   }
 
+  .article-html {
+    p { 
+      margin: 1em 0;
+    }
+
+    img {
+      margin: 2em 1em;
+    }
+
+    table {
+      width: 100%;
+    }
+  }
+
   .post-heading {
     background-color: #C33630;
     border-bottom: #bbb;

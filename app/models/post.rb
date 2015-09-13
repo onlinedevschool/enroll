@@ -59,6 +59,13 @@ class Post < ActiveRecord::Base
 private
 
   def to_html(val)
-    RDiscount.new(val).to_html
+    require 'no_follow_filter'
+    require 'responsive_images_filter'
+    pipeline = HTML::Pipeline.new([
+      HTML::Pipeline::MarkdownFilter,
+      NoFollowFilter,
+      ResponsiveImagesFilter,
+    ], gfm: true)
+    pipeline.call(val)[:output].to_s
   end
 end

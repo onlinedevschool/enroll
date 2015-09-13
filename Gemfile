@@ -24,8 +24,8 @@ gem "devise"
 # Use responders gem in controllers
 gem 'responders'
 
-gem 'rdiscount'
-
+gem 'html-pipeline'
+gem 'github-markdown'
 gem 'bootstrap_form'
 
 gem 'gravtastic'
