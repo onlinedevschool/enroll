@@ -1,7 +1,7 @@
 class Authoring::PostsController < ApplicationController
   before_action :authenticate_author!
 
-  layout 'bootstrap'
+  layout 'authoring'
 
   def index
     posts
