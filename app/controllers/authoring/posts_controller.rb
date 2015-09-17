@@ -50,6 +50,6 @@ private
   end
 
   def post_params
-    params.require(:post).permit(:title, :markdown, :publish)
+    params.require(:post).permit(:category_id, :title, :markdown, :publish)
   end
 end
