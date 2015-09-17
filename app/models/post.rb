@@ -61,8 +61,10 @@ private
   def to_html(val)
     require 'no_follow_filter'
     require 'responsive_images_filter'
+    require 'pygments'
     pipeline = HTML::Pipeline.new([
       HTML::Pipeline::MarkdownFilter,
+      HTML::Pipeline::SyntaxHighlightFilter,
       NoFollowFilter,
       ResponsiveImagesFilter,
     ], gfm: true)

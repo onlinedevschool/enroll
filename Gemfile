@@ -26,6 +26,9 @@ gem 'responders'
 
 gem 'html-pipeline'
 gem 'github-markdown'
+gem 'github-linguist'
+gem 'pygments.rb'
+
 gem 'bootstrap_form'
 
 gem 'gravtastic'

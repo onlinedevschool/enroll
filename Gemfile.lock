@@ -44,6 +44,7 @@ GEM
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
+    charlock_holmes (0.7.3)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -68,7 +69,13 @@ GEM
       dotenv (= 2.0.2)
       railties (~> 4.0)
     erubis (2.7.0)
+    escape_utils (1.1.0)
     execjs (2.6.0)
+    github-linguist (4.6.0)
+      charlock_holmes (~> 0.7.3)
+      escape_utils (~> 1.1.0)
+      mime-types (>= 1.19)
+      rugged (>= 0.23.0b)
     github-markdown (0.6.9)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -112,7 +119,11 @@ GEM
     non-stupid-digest-assets (1.0.5)
     orm_adapter (0.5.0)
     pg (0.18.2)
+    posix-spawn (0.3.11)
     puma (2.13.3)
+    pygments.rb (0.6.3)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.2.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -154,6 +165,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    rugged (0.23.2)
     sass (3.4.16)
     sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -202,6 +214,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    yajl-ruby (1.2.1)
 
 PLATFORMS
   ruby
@@ -212,6 +225,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   dotenv-rails
+  github-linguist
   github-markdown
   gravtastic
   html-pipeline
@@ -222,6 +236,7 @@ DEPENDENCIES
   non-stupid-digest-assets
   pg
   puma
+  pygments.rb
   rails (= 4.2.3)
   rails_12factor
   responders
