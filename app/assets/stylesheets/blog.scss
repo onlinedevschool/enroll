@@ -9,6 +9,10 @@ body#blog {
   }
 
   .article-html {
+    pre code {
+      margin: 2em 0;
+    }
+
     p { 
       margin: 1em 0;
     }
