@@ -1,11 +1,11 @@
 <%= render partial: 'page_heading', locals: {
-  title: "Articles by category" } %>
+  title: "Articles by series" } %>
 
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <%- @categories.in_groups_of(2).each do |group| %>
-        <%= render partial: 'category', collection: group.compact %>
+      <%- @series.in_groups_of(2).each do |group| %>
+        <%= render partial: 'series', collection: group.compact %>
       <%- end %>
     </div>
   </div>

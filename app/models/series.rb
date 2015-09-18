@@ -1,6 +1,15 @@
 class Series < ActiveRecord::Base
   has_many :posts
 
+  scope :containing_posts, -> {
+    distinct("posts.id").
+      joins("JOIN posts ON posts.series_id = series.id")
+  }
+
+  def containing_posts_count
+    containing_posts.count("DISTINCT categories.id")
+  end
+
   def to_s
     name
   end

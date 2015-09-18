@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "/authoring" => "authoring/posts#index"
 
   resources :categories, only: %i[index]
+  resources :series, only: %i[index]
 
   resources :affiliate_landings
 
