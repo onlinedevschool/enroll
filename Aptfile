@@ -1,2 +1,2 @@
-http://mirrors.kernel.org/ubuntu/pool/main/i/icu/libicu48_4.8.1.1-3ubuntu0.5_amd64.deb
-http://mirrors.kernel.org/ubuntu/pool/main/i/icu/libicu-dev_4.8.1.1-3ubuntu0.5_amd64.deb
+libicu
+libicu-dev
