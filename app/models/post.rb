@@ -28,6 +28,14 @@ class Post < ActiveRecord::Base
     write_attribute(:published_at, DateTime.now) if val
   end
 
+  def title
+    if series.to_s.length > 0
+      [series.to_s, read_attribute(:title)].join(" - ")
+    else
+      read_attribute(:title)
+    end
+  end
+
   def author_url
     author && author.url
   end
