@@ -1,12 +1,5 @@
-<div class="post-heading">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9 col-md-offset-1">
-        <h1><%= link_to raw(post.title), post_url(post.permalink), style: "color: white" %></h1>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render partial: 'page_heading', locals: {
+  title: link_to(raw(post.title), post_url(post.permalink), style: "color: white") } %>
 
 <div class="container">
   <div class="row">

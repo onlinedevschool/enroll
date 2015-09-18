@@ -9,8 +9,12 @@ Rails.application.routes.draw do
 
   namespace :authoring do
     resources :posts
+    resources :categories
+    resources :series
   end
   get "/authoring" => "authoring/posts#index"
+
+  resources :categories, only: %i[index]
 
   resources :affiliate_landings
 

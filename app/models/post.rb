@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :author
   belongs_to :category
+  belongs_to :series
 
   scope :ordered, -> {
     order( created_at: :desc )
@@ -13,6 +14,9 @@ class Post < ActiveRecord::Base
   scope :homepage, -> {
     published.ordered.limit(6)
   }
+
+  before_create :write_permalink
+  before_save   :write_html
 
   def self.fuzzy(id)
     by_id = find_by(id: id)
@@ -45,20 +49,20 @@ class Post < ActiveRecord::Base
       published_at <= DateTime.now
   end
 
-  def title=(val)
-    write_attribute(:title, val)
-    return if permalink.present?
-    write_attribute(:permalink, val.parameterize)
-  end
-
   def markdown=(val)
     write_attribute(:markdown, val)
-    write_attribute(:html, to_html(val))
   end
 
 private
 
-  def to_html(val)
+  def write_permalink
+    generated = [series.to_s, read_attribute(:title)].
+      join(" ").
+      parameterize
+    write_attribute(:permalink, generated)
+  end
+
+  def write_html
     require 'no_follow_filter'
     require 'responsive_images_filter'
     require 'pygments'
@@ -68,6 +72,8 @@ private
       NoFollowFilter,
       ResponsiveImagesFilter,
     ], gfm: true)
-    pipeline.call(val)[:output].to_s
+
+    html = pipeline.call(read_attribute(:markdown))[:output].to_s
+    write_attribute(:html, html)
   end
 end

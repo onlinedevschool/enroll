@@ -4,17 +4,17 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h2> Listing posts - <small>
-      <%= link_to "Create new post", new_authoring_post_path %>
+      <h2> Listing series - <small>
+      <%= link_to "Create new series", new_authoring_series_path %>
         </small>
       </h2>
-      <table class="author-post-list">
+      <table class="table">
         <tr>
           <th></th>
-          <th></th>
+          <th>name</th>
         </tr>
-        <%= render partial: 'post_row',
-                   collection: @posts %>
+        <%= render partial: 'series_row',
+                   collection: @series %>
       </table>
     </div>
   </div>

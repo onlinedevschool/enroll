@@ -1,4 +1,5 @@
 body#blog {
+
   .navbar-nav > li > a.btn-danger {
     background: #1581F7 !important;
     border-color: #235388;
@@ -20,22 +21,6 @@ body#blog {
 
     table {
       width: 100%;
-    }
-  }
-
-  .post-heading {
-    background-color: #C33630;
-    border-bottom: #bbb;
-    text-align: center;
-
-    h1 {
-      padding: 1em 0 0.5em 0;
-      margin: 1em 0 0.5em 0;
-      color: white;
-      letter-spacing: -0.03em;
-      font-size: 2.8em;
-      line-height: 1.4em;
-      font-weight: 600;
     }
   }
 

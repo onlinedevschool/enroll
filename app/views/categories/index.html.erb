@@ -1,0 +1,11 @@
+<%= render partial: 'page_heading', title: "Articles by category" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <%- @categories.in_groups_of(2).each do |group| %>
+        <%= render partial: 'category', collection: group %>
+      <%- end %>
+    </div>
+  </div>
+</div>

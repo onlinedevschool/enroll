@@ -7,7 +7,7 @@ class CreateCategories < ActiveRecord::Migration
     end
 
     root_category = Category.create(name: "Announcements")
-    add_column :posts, :category_id, :integer, null: false, default: root_category.id
+    add_column :posts, :category_id, :integer, null: false
     add_index :posts, :category_id
   end
 end

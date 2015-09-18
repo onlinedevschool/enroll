@@ -36,3 +36,21 @@ img.logo {
 .full-height {
   min-width: 80%;
 }
+
+.page-heading {
+  margin-top: 60px;
+  background-color: #C33630;
+  border-bottom: #bbb;
+  text-align: center;
+
+  h1 {
+    padding: 0.5em 0 0.5em 0;
+    margin: 0.5em 0 0.5em 0;
+    color: white;
+    letter-spacing: -0.03em;
+    font-size: 2.8em;
+    line-height: 1.4em;
+    font-weight: 600;
+  }
+}
+
