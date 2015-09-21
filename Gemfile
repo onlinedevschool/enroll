@@ -71,3 +71,9 @@ group :development, :test do
   gem 'spring'
 end
 
+group :test do
+  gem 'minitest'
+  gem 'minitest-rails'
+  gem 'minitest-stub_any_instance' 
+end
+

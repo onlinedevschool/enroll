@@ -1,0 +1,32 @@
+enrollment_not_ready_for_bill:
+  name: "Not Ready"
+  email: "not_ready@gmail.com"
+  weeks: 12
+  price: <%= Enrollment.financed_price %>
+  stripe_id: "stripe_id"
+  financed: true
+  created_at: <%= 28.days.ago %>
+enrollment_ready_for_bill:
+  name: "Bill Me"
+  email: "bill_me@gmail.com"
+  weeks: 12
+  price: <%= Enrollment.financed_price %>
+  stripe_id: "stripe_id"
+  financed: true
+  created_at: <%= 1.month.ago  %>
+enrollment_last_payment_already_made:
+  name: "Last Payment Made"
+  email: "last_payment_made@gmail.com"
+  weeks: 12
+  price: <%= Enrollment.financed_price %>
+  stripe_id: "stripe_id"
+  financed: true
+  created_at: <%= 5.month.ago  %>
+enrollment_needs_last_bill:
+  name: "needs last"
+  email: "needs_last@gmail.com"
+  weeks: 12
+  price: <%= Enrollment.financed_price %>
+  stripe_id: "stripe_id"
+  financed: true
+  created_at: <%= 4.month.ago  %>

@@ -4,9 +4,8 @@ class Enrollment < ActiveRecord::Base
   FINANCE_FEE      = 980
   PAYMENT_COUNT    = 5
   BASE_PRICE       = 3999
-  PAYMENT_PRICE    = (BASE_PRICE + FINANCE_FEE) / PAYMENT_COUNT
 
-  has_many   :payments
+  has_many   :payments, dependent: :destroy
 
   scope :billable, -> {
     # it is price - 10 because I am not charging cents and so therefore
@@ -32,6 +31,23 @@ class Enrollment < ActiveRecord::Base
   validates :financed,    inclusion: { in: [true, false],
                                        message: "must be true or false" }
 
+  def self.financed_price(total_price=nil)
+    (total_price || BASE_PRICE) + FINANCE_FEE
+  end
+
+  def self.payment_price(total_price=nil)
+    financed_price(total_price) / PAYMENT_COUNT
+  end
+
+  def self.charge_billable_accounts
+    billable.map do |e|
+      amount = Enrollment.payment_price(e.price)
+      e.payments.create(amount: amount).tap do |p|
+        p.charge
+      end
+    end
+  end
+
   def valid?(*args)
     e = Enrollment.find_by(email: email)
     if e && e.payments.none?
@@ -39,6 +55,7 @@ class Enrollment < ActiveRecord::Base
     end
     super(args)
   end
+
   def pay_option=(val)
     write_attribute(:financed, val == "payments" )
   end
