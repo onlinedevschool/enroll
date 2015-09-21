@@ -27,7 +27,7 @@ homeData = [{
   "al": "http://www.npr.org/sections/ed/2014/12/20/370954988/twelve-weeks-to-a-six-figure-job",
   "at": "12 Weeks To A 6-Figure Job"
 },{
-  "h1": "100% of Graduates have been hired!",
+  "h1": "100% of our Grads have jobs!",
   "h2": "We have partnerships with NGOs to get you work",
   "p" : "At ODS we call it <strong>Enrollment to Hire</strong> education and <strong>we mean it</strong>.",
   "as": "US News",
@@ -43,22 +43,6 @@ homeData = [{
 }]
 
 $(document).ready ->
-  # none of this is valid on any other page
-  return if $("#home.section").length == 0
-
-  randBg = Math.floor((Math.random() * 6) + 1)
-  $("#home").removeClass("person-1 person-2 person-3 person-4 person-5 person-6")
-  $("#home").addClass("person-#{randBg}")
-
-  rIndex = Math.floor(Math.random()*homeData.length)
-  chosenHomeData = homeData[rIndex]
-  $("#home h1").html(chosenHomeData['h1'])
-  $("#home h2").html(chosenHomeData['h2'])
-  $("#home p").html(chosenHomeData['p'])
-  $("#home h4 .article_source").html(chosenHomeData['as'])
-  $("#home h4 a.article_link").attr('href',chosenHomeData['al'])
-  $("#home h4 a.article_link").html(chosenHomeData['at'])
-
   smoothScroll.init
     speed: 1000
     easing: 'easeInOutQuart'

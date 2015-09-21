@@ -38,7 +38,7 @@
     <div class="opt-radio">
       <input type="radio" name="enrollment[pay_option]" 
       id="enrollment_pay_option_payments" value="payments">
-      <label>Make <%= Enrollment::PAYMENT_COUNT %>  monthly payments of <%= number_to_currency(Enrollment::PAYMENT_PRICE) %> instead</label>
+      <label>Make <%= Enrollment::PAYMENT_COUNT %>  monthly payments of <%= number_to_currency(Enrollment.payment_price) %> instead</label>
     </div>
   </div>
 
