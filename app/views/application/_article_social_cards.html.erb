@@ -1,6 +1,6 @@
 <!-- Schema.org markup for Google+ -->
 <meta itemprop="name" content="OnlineDevSchool Blog">
-<meta itemprop="description" content="<%= truncate(@post.html, length: 249) %>">
+<meta itemprop="description" content="<%= truncate(strip_tags(@post.html), length: 249) %>">
 <meta itemprop="image" content="<%= @site_share_image %>">
 <meta itemprop="headline" content="<%= @post.title %>">
 <meta itemprop="datePublished" content="<%= @post.published_at.to_s(:db) %>">
@@ -11,7 +11,7 @@
 <meta name="twitter:creator" content="@onlinedevschool">
 <meta name="twitter:url" content="<%= post_url(@post.permalink) %>">
 <meta name="twitter:title" content="<%= @post.title %>">
-<meta name="twitter:description" content="<%= truncate(@post.html, length: 249) %>">
+<meta name="twitter:description" content="<%= truncate(strip_tags(@post.html), length: 249) %>">
 <!-- Twitter summary card with large image must be at least 280x150px -->
 <meta name="twitter:image" content="<%= @site_share_image %>">
 
@@ -20,5 +20,5 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="<%= post_url(@post.permalink) %>" />
 <meta property="og:image" content="<%= @site_share_image %>" />
-<meta property="og:description" content="<%= truncate(@post.html, length: 249) %>" />
+<meta property="og:description" content="<%= truncate(strip_tags(@post.html), length: 249) %>" />
 <meta property="og:site_name" content="OnlineDevSchool Blog" />
