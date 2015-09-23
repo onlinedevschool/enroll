@@ -10,7 +10,6 @@
   <%= f.submit class: 'btn btn-primary' %>
   <%- unless post.published? %>
     <%= button_tag "Update and Publish", type: 'button',
-      class: "btn btn-warning",
-      id: 'publish_btn' %>
+      class: "btn btn-warning", id: 'publish_btn' %>
   <%- end %>
 <%- end %>
