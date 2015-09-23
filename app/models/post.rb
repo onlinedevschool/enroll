@@ -28,14 +28,6 @@ class Post < ActiveRecord::Base
     write_attribute(:published_at, DateTime.now) if val
   end
 
-  def title
-    if series.to_s.length > 0
-      [series.to_s, read_attribute(:title)].join(" - ")
-    else
-      read_attribute(:title)
-    end
-  end
-
   def author_url
     author && author.url
   end
@@ -59,6 +51,14 @@ class Post < ActiveRecord::Base
 
   def markdown=(val)
     write_attribute(:markdown, val)
+  end
+
+  def full_title
+    if series
+      [series, title].join(" - ")
+    else
+      title
+    end
   end
 
 private
