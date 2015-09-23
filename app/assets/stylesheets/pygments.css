@@ -7,6 +7,7 @@
 pre { 
   background: transparent !important;
   border: none;
+  color: #fff;
 }
 
 .highlight {
@@ -18,7 +19,6 @@ pre {
   border-radius: 3px;
   padding: 20px; 
   background: #343642;
-  color: #C1C2C3;
   margin: 2em 0;
 }
 .highlight .hll { background-color: #ffc; }
