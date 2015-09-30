@@ -16,6 +16,6 @@
 //= require jquery.turbolinks
 //= require masonry.min
 //= require jquery.payment
-//= require smooth-scroll.min
 //= require featherlight.min
+//= require smooth-scroll.min
 //= require_tree .

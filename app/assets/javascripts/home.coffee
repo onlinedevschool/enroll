@@ -43,6 +43,12 @@ homeData = [{
 }]
 
 $(document).ready ->
+  bgs = [1, 2, 3, 5, 6].sort ->
+    return .5 - Math.random()
+
+  $(".random-person").each (i, el) ->
+    $(el).addClass "person-#{bgs[i]}"
+
   smoothScroll.init
     speed: 1000
     easing: 'easeInOutQuart'
