@@ -21,10 +21,19 @@ html, body {
   height: 100%;
 }
 
+a.navbar-brand {
+  text-indent: -1000px;
+}
+
+.tagline {
+  color: white;
+  font-size: 0.9em;
+}
+
 img.logo {
-  width: 36px;
+  width: 200px;
   float: left;
-  margin-top: -6px;
+  margin-top: -10px;
   margin-right: 4px;
 }
 
