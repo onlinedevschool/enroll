@@ -24,6 +24,10 @@ class Enrollment < ActiveRecord::Base
 
   validates :name,        presence: true
 
+  validates :why,         presence: true
+
+  validates :github_url,  presence: true
+
   validates :weeks,       presence: true,
                           inclusion: { in: WEEK_OPTIONS,
                                        message: "must be one of #{WEEK_OPTIONS.join(', ')}" }

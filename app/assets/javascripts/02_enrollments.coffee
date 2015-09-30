@@ -1,4 +1,6 @@
 $(document).ready ->
+  SUCCESS_URL = "/posts/congratulations-you-have-applied-to-the-devschool"
+
   $("input#enrollment_weeks_12").prop("checked", true)
   $("input#enrollment_pay_option_prepay").prop("checked", true)
 
@@ -9,7 +11,7 @@ $(document).ready ->
     res = $.post "/enrollments.json", $(this).serialize()
     res.done ->
       eId = JSON.parse(res.responseText)['id']
-      document.location.href = "/enrollments/#{eId}/payments/new"
+      document.location.href = SUCCESS_URL
     res.fail ->
       button.removeAttr("disabled")
       errors = JSON.parse(res.responseText)['errors']

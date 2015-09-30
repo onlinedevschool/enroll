@@ -17,7 +17,21 @@
   </div>
 
   <div class="control-group">
-    <h3>select pace:</h3>
+    <%= f.label :github_url, class: 'control-label',
+                        value: 'Github url' %>
+    <%= f.text_field :github_url, class: 'form-control' %>
+    <div id="enrollment_github_url_error" class="input-error-message"></div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :why, class: 'control-label',
+                      value: 'Why do you want to become a web developer?' %>
+    <%= f.text_area :why, class: 'form-control', rows: 6 %>
+    <div id="enrollment_why_error" class="input-error-message"></div>
+  </div>
+
+  <div class="control-group">
+    <h3>What pacing option do you want?</h3>
     <%- Enrollment::WEEK_OPTIONS.each_with_index do |w, i| %>
       <div class="opt-radio">
         <input type="radio" name="enrollment[weeks]" 
@@ -28,7 +42,7 @@
   </div>
 
   <div class="control-group">
-    <h3>I want to</h3>
+    <h3>Flexible education funding!</h3>
     <div class="opt-radio">
       <input type="radio" name="enrollment[pay_option]" 
              id="enrollment_pay_option_prepay" value="prepay">
@@ -44,7 +58,7 @@
 
   <div class="control-group">
     <label></label>
-    <%= f.submit "Enroll and continue to the payment page", :class => 'btn btn-block btn-primary' %>
+    <%= f.submit "Apply now", :class => 'btn btn-block btn-primary' %>
   </div>
 
 <% end %>
