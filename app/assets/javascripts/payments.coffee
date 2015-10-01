@@ -11,7 +11,7 @@ $(document).ready ->
       res = $.post url, form.serialize()
       res.done ->
         html = ["<div class='page-header text-center'>",
-                "<h2>Welcome to ODS!</h2>",
+                "<h2>Welcome to devschool!</h2>",
                 "<h4>Your payment was successfully processed</h4>",
                 "</div>",
                 "<p>Jim OKelly will be your new web development instructor!</p>",

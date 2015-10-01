@@ -1,7 +1,7 @@
 <%= bootstrap_form_for(EnrollmentApplication.new(params[:enrollment_application])) do |f| %>
   <%= f.text_field :name, label: "What is your name, adventurer?" %>
   <%= f.text_field :email, label: "At what email can we contact you?" %>
-  <%= f.text_area :why, label: "Why do you want to enroll at ODS?",
+  <%= f.text_area :why, label: "Why do you want to enroll at devschool?",
        rows: 4 %>
   <%= f.text_area :goals, label: "What are some of your goals after graduation?",
        rows: 4 %>

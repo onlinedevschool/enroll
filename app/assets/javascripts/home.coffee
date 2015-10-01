@@ -22,20 +22,20 @@ homeData = [{
 },{
   "h1": "You graduate when you get a job!",
   "h2": "Unlike other programs, we don't dump you on the doorstep",
-  "p" : "At ODS we call it <strong>Enrollment to Hire</strong> education and <strong>we mean it</strong>.",
+  "p" : "At devschool we call it <strong>Enrollment to Hire</strong> education and <strong>we mean it</strong>.",
   "as": "NPR",
   "al": "http://www.npr.org/sections/ed/2014/12/20/370954988/twelve-weeks-to-a-six-figure-job",
   "at": "12 Weeks To A 6-Figure Job"
 },{
   "h1": "100% of our Grads have jobs!",
   "h2": "We have partnerships with NGOs to get you work",
-  "p" : "At ODS we call it <strong>Enrollment to Hire</strong> education and <strong>we mean it</strong>.",
+  "p" : "At devschool we call it <strong>Enrollment to Hire</strong> education and <strong>we mean it</strong>.",
   "as": "US News",
   "al": "http://money.usnews.com/money/blogs/outside-voices-careers/2014/03/26/thinking-about-a-nonprofit-job-heres-what-you-should-know",
   "at": "What should I know about working for an NGO?"
 },{
   "h1": "1 on 1 Mentorship with an Expert",
-  "h2": "At ODS you will NOT be taught by an ex student",
+  "h2": "At devschool you will NOT be taught by an ex student",
   "p" : "We require a <strong>minimum</strong> of <strong>15 years</strong> to teach.</strong>.",
   "as": "CodeMentor",
   "al": "https://www.codementor.io/onlinedevschool",

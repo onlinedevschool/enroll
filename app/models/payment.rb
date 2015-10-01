@@ -7,7 +7,7 @@ class Payment < ActiveRecord::Base
       customer: enrollment.stripe_id,
       currency: 'usd',
       amount: amount * 100,
-      description: "OnlineDevSchool.com"
+      description: "DevSchool (onlinedevschool.com)"
     )
     update_attribute(:auth_code, charge.id)
   end
