@@ -248,11 +248,125 @@ hr {
 }
 
 @media screen and (max-width:769px) {
-  .home-slide h1 {
-    font-size: 40px;
+  .navbar-brand img.logo {
+    width: 120px;
+    margin-top: 1px;
+    float: left;
   }
-  .home-slide p {
-    font-size: 2em;
+
+  .person-1, .person-2, .person-3, 
+    .person-4, .person-5, .person-6 {
+    background-position: 70% top !important;
+  }
+
+  .pace-options-table {
+    font-size: 0.7em;
+    width: 100%;
+    margin: 0;
+  }
+
+  .pace-options-table tr {
+    height: 1.4em;
+  }
+
+  #reviews {
+    img.review-image-lg {
+      width: 120px;
+    }
+
+    .review-name-lg {
+      margin-top: 4px;
+      font-size: 1.2em;
+      line-height: 1.4em;
+    }
+
+    .review-callout {
+      width: 38%;
+      padding: 2px;
+
+      .arrow_box {
+        padding: 2px !important;
+
+        p {
+          font-size: 0.7em;
+          line-height: 1em;
+        }
+      }
+    }
+  }
+  #reviews, #curriculum, #pacing, #howitworks, .feather {
+    img.courseware-img {
+      width: 100px !important;
+      float: left;
+      margin-left: 1em;
+    }
+
+    p {
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      font-size: 1em;
+      line-height: 1.2em;
+    }
+
+    h1 {
+      font-size: 1.4em;
+      margin-left: 0.4em !important;
+    }
+
+    h2 {
+      margin-left: 0.4em !important;
+      font-size: 1.2em;
+      line-height: 1.2em;
+    }
+
+    h3 {
+      font-size: 1em;
+      line-height: 1.2em;
+      margin-left: 0.4em !important;
+    }
+
+    h4 {
+      font-size: 0.8em;
+      line-height: 1em;
+      margin-left: 0.4em !important;
+    }
+  }
+
+  #howitworks ul.checks li {
+    font-size: 0.9em;
+    line-height: 1.2em;
+    margin-bottom: 0.7em;
+    background-size: 18px;
+  }
+
+  .home-slide {
+    h1 {
+      font-size: 1.4em;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      line-height: 1.2em;
+    }
+
+    h3 {
+      font-size: 1em;
+      line-height: 1.2em;
+    }
+
+    h4 {
+      font-size: 0.8em;
+      line-height: 1em;
+    }
+
+    p {
+      font-size: 0.8em;
+      line-height: 0.9em;
+     }
+  }
+
+  .well {
+    padding: 1em;
   }
 }
 
