@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "DevSchool - learn to code through 1 on 1 expert mentor sessions at our online web development bootcamp!" %></title>
-    <meta name="description" content='<%= content_for?(:description) ? yield(:description) : "OnlineDevSchool - Learn to code, change your life" %>' />
+    <title><%= content_for?(:title) ? yield(:title) : @site_title %></title>
+    <meta name="description" content='<%= content_for?(:description) ? yield(:description) : @site_description %>' />
     <%= csrf_meta_tags %>
 
     <%= render 'site_social_cards' %>
@@ -23,7 +23,6 @@
     <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
     <!-- ms webmaster tools -->
-    <meta name="msvalidate.01" content="7AF7866E003FF74CC07851058EE6D9A6" />
   </head>
   <body>
 
