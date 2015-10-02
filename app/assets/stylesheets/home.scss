@@ -294,6 +294,7 @@ hr {
       }
     }
   }
+
   #reviews, #curriculum, #pacing, #howitworks, .feather {
     img.courseware-img {
       width: 100px !important;
@@ -309,26 +310,27 @@ hr {
     }
 
     h1 {
-      font-size: 1.4em;
+      font-size: 1.6em;
+      line-height: 1.8em;
       margin-left: 0.4em !important;
     }
 
     h2 {
       margin-left: 0.4em !important;
-      font-size: 1.2em;
-      line-height: 1.2em;
+      font-size: 1.4em;
+      line-height: 1.6em;
     }
 
     h3 {
-      font-size: 1em;
-      line-height: 1.2em;
       margin-left: 0.4em !important;
+      font-size: 1.2em;
+      line-height: 1.4em;
     }
 
     h4 {
-      font-size: 0.8em;
-      line-height: 1em;
       margin-left: 0.4em !important;
+      font-size: 1em;
+      line-height: 1.2em;
     }
   }
 
@@ -341,27 +343,28 @@ hr {
 
   .home-slide {
     h1 {
-      font-size: 1.4em;
+      font-size: 1.6em;
+      line-height: 1.8em;
     }
 
     h2 {
-      font-size: 1.2em;
-      line-height: 1.2em;
+      font-size: 1.4em;
+      line-height: 1.6em;
     }
 
     h3 {
+      font-size: 1.2em;
+      line-height: 1.4em;
+    }
+
+    h4 {
       font-size: 1em;
       line-height: 1.2em;
     }
 
-    h4 {
-      font-size: 0.8em;
-      line-height: 1em;
-    }
-
     p {
-      font-size: 0.8em;
-      line-height: 0.9em;
+      font-size: 1em;
+      line-height: 1.2em;
      }
   }
 
