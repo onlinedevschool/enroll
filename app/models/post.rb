@@ -11,8 +11,19 @@ class Post < ActiveRecord::Base
     where('posts.published_at <= NOW()')
   }
 
+  scope :with_categories, -> {
+    joins("LEFT JOIN categories ON categories.id = posts.category_id")
+  }
+
+  scope :no_internals, -> {
+    with_categories.where("categories.name <> 'internal'")
+  }
+
   scope :homepage, -> {
-    published.ordered.limit(6)
+    no_internals.
+      published.
+      ordered.
+      limit(6)
   }
 
   before_create :write_permalink
