@@ -24,7 +24,7 @@ module Enroll
     # config.i18n.default_locale = :de
 
     config.generators do |g|
-      g.test_framework :minitest, spec: true, fixture: false
+      g.test_framework nil
       g.assets  false
       g.javascripts  false
       g.helper false
