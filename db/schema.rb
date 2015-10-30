@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20150930045341) do
   create_table "posts", force: :cascade do |t|
     t.integer  "author_id"
     t.string   "title",        null: false
-    t.string   "permalink",    null: false
+    t.string   "permalink"
     t.text     "html",         null: false
     t.text     "markdown",     null: false
     t.datetime "published_at"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20150930045341) do
 
   add_index "posts", ["author_id"], name: "index_posts_on_author_id", using: :btree
   add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
+  add_index "posts", ["permalink"], name: "index_posts_on_permalink", using: :btree
   add_index "posts", ["series_id"], name: "index_posts_on_series_id", using: :btree
 
   create_table "series", force: :cascade do |t|

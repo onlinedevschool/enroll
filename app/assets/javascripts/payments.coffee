@@ -30,7 +30,7 @@ $(document).ready ->
     button = $("button[type=submit]")
     e.preventDefault()
     button.attr("disabled", "disabled")
-    Stripe.setPublishableKey(form.data('stripe-publishable-key'));
+    Stripe.setPublishableKey(form.data('stripe-publishable-key'))
     attrs = {
       number: $('.card-number').val(),
       cvc: $('.card-cvc').val(),

@@ -52,20 +52,16 @@ class Enrollment < ActiveRecord::Base
     end
   end
 
-  def valid?(*args)
-    e = Enrollment.find_by(email: email)
-    if e && e.payments.none?
-      e.destroy
-    end
-    super(args)
-  end
-
   def pay_option=(val)
     write_attribute(:financed, val == "payments" )
   end
 
   def pay_option
     financed? ? "payments" : "prepay"
+  end
+
+  def price
+    read_attribute(:price) || BASE_PRICE
   end
 
   def total_price
