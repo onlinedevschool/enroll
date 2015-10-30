@@ -69,7 +69,7 @@ class Enrollment < ActiveRecord::Base
   end
 
   def total_price
-    financed? ? BASE_PRICE + FINANCE_FEE : BASE_PRICE
+    financed? ? price + FINANCE_FEE : price
   end
 
   def first_payment_amount
