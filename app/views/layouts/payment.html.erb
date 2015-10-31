@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="-52GNHCV4D4w9CyKtzw9_P5mVTYTeFbMpyHg3P_3nZo" />
+    <title><%= content_for?(:title) ? yield(:title) : @site_title %></title>
+    <meta name="description" content='<%= content_for?(:description) ? yield(:description) : @site_description %>' />
+    <%= csrf_meta_tags %>
+
+    <%= render 'site_social_cards' %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+    <!-- ms webmaster tools -->
+  </head>
+  <body>
+
+    <%= render partial: 'gtc' %>
+    <%= render partial: '/application/menus/payment' %>
+    <%= yield %>
+    <%= render partial: 'footer' %>
+    <%= render partial: 'chat' %>
+    <%= javascript_include_tag "application" %>
+
+  </body>
+</html>

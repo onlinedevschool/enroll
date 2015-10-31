@@ -3,6 +3,8 @@ class PaymentsController < ApplicationController
   respond_to :html, only: %w[new]
   respond_to :json, except: %w[new]
 
+  layout 'payment'
+
   def index
     respond_with(payments)
   end
