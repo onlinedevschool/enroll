@@ -35,18 +35,9 @@ class Enrollment < ActiveRecord::Base
   validates :financed,    inclusion: { in: [true, false],
                                        message: "must be true or false" }
 
-  def self.financed_price(total_price=nil)
-    (total_price || BASE_PRICE) + FINANCE_FEE
-  end
-
-  def self.payment_price(total_price=nil)
-    financed_price(total_price) / PAYMENT_COUNT
-  end
-
   def self.charge_billable_accounts
     billable.map do |e|
-      amount = Enrollment.payment_price(e.price)
-      e.payments.create(amount: amount).tap do |p|
+      e.payments.create(amount: next_payment_amount).tap do |p|
         p.charge
       end
     end
@@ -64,12 +55,12 @@ class Enrollment < ActiveRecord::Base
     read_attribute(:price) || BASE_PRICE
   end
 
-  def total_price
+  def adjusted_price
     financed? ? price + FINANCE_FEE : price
   end
 
-  def first_payment_amount
-    financed? ? total_price / PAYMENT_COUNT : total_price
+  def next_payment_amount
+    financed? ? price / PAYMENT_COUNT : price
   end
 
   def initial_payment_made?
@@ -77,7 +68,7 @@ class Enrollment < ActiveRecord::Base
   end
 
   def record_pricing
-    write_attribute(:price, total_price)
+    write_attribute(:price, adjusted_price)
   end
 
 end

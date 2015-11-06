@@ -14,14 +14,14 @@ class PaymentsController < ApplicationController
   end
 
   def new
-    @total  = enrollment.total_price
-    @amount = enrollment.first_payment_amount
+    @total  = enrollment.price
+    @amount = enrollment.next_payment_amount
 
     new_payment
   end
 
   def create
-    attrs = payment_params.merge(amount: enrollment.first_payment_amount)
+    attrs = payment_params.merge(amount: enrollment.next_payment_amount)
     new_payment(attrs).save
     new_payment.charge(attrs[:token])
     AffiliateSale.track(cookies, enrollment)
