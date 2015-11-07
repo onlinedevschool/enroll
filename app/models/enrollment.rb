@@ -16,6 +16,10 @@ class Enrollment < ActiveRecord::Base
       having("SUM(payments.amount) < (enrollments.price - 10) AND MAX(payments.created_at) < current_date - interval '1' month")
   }
 
+  scope :active, -> {
+    where("stripe_id IS NOT NULL AND refunded_at IS NULL")
+  }
+
   before_create :record_pricing
 
   validates :email,       presence: true,
@@ -41,6 +45,14 @@ class Enrollment < ActiveRecord::Base
         p.charge
       end
     end
+  end
+
+  def self.payment_price
+    financed_price / 5
+  end
+
+  def self.financed_price
+    BASE_PRICE + FINANCE_FEE
   end
 
   def active?
