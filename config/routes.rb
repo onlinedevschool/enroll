@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :instructors
   devise_for :authors
 
   resources :posts, only: [:show, :index]
@@ -13,6 +14,10 @@ Rails.application.routes.draw do
     resources :series
   end
   get "/authoring" => "authoring/posts#index"
+
+  namespace :instructors do
+    resources :enrollments
+  end
 
   resources :categories, only: %i[index]
   resources :series, only: %i[index]

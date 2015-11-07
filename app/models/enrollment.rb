@@ -76,7 +76,7 @@ class Enrollment < ActiveRecord::Base
   end
 
   def adjusted_price
-    financed? ? price + FINANCE_FEE : price
+    financed? ? self.financed_price : price
   end
 
   def next_payment_amount

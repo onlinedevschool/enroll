@@ -1,0 +1,15 @@
+<h1>Pending applications</h1>
+<table>
+  <tr>
+    <th>Applied on</th>
+    <th>Student name</th>
+    <th>Github</th>
+    <th>Why?</th>
+  </tr>
+  <tr>
+    <td><%= enrollment.created_at.to_date %></td>
+    <td><%= enrollment.name %></td>
+    <td><%= enrollment.github_url %></td>
+    <td><%= enrollment.why %></td>
+  </tr>
+</table>

@@ -24,5 +24,6 @@ class ApplicationController < ActionController::Base
     DESCRIPTION
     @site_last_updated = 2.days.ago
   end
-end
 
+
+end

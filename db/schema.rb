@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107041908) do
+ActiveRecord::Schema.define(version: 20151107181048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,15 +68,35 @@ ActiveRecord::Schema.define(version: 20151107041908) do
     t.integer  "price"
     t.string   "stripe_id"
     t.boolean  "financed"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.text     "why"
     t.string   "github_url"
     t.datetime "accepted_at"
     t.datetime "refunded_at"
     t.text     "refund_reason"
     t.integer  "refund_amount"
+    t.date     "last_contacted_on"
   end
+
+  create_table "instructors", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.string   "name",                   default: "", null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "instructors", ["email"], name: "index_instructors_on_email", unique: true, using: :btree
+  add_index "instructors", ["reset_password_token"], name: "index_instructors_on_reset_password_token", unique: true, using: :btree
 
   create_table "payments", force: :cascade do |t|
     t.integer  "enrollment_id"

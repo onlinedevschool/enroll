@@ -1,8 +1,4 @@
-class Authoring::SeriesController < ApplicationController
-  before_action :authenticate_author!
-
-  layout 'authoring'
-
+class Authoring::SeriesController < Authoring::ApplicationController
   def index
     all_series
   end

@@ -1,8 +1,4 @@
-class Authoring::CategoriesController < ApplicationController
-  before_action :authenticate_author!
-
-  layout 'authoring'
-
+class Authoring::CategoriesController < Authoring::ApplicationController
   def index
     categories
   end
