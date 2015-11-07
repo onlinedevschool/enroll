@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930045341) do
+ActiveRecord::Schema.define(version: 20151107041908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,11 +68,14 @@ ActiveRecord::Schema.define(version: 20150930045341) do
     t.integer  "price"
     t.string   "stripe_id"
     t.boolean  "financed"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.text     "why"
     t.string   "github_url"
     t.datetime "accepted_at"
+    t.datetime "refunded_at"
+    t.text     "refund_reason"
+    t.integer  "refund_amount"
   end
 
   create_table "payments", force: :cascade do |t|

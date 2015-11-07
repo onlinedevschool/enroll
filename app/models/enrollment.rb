@@ -43,6 +43,14 @@ class Enrollment < ActiveRecord::Base
     end
   end
 
+  def active?
+    stripe_id.present? && !refunded?
+  end
+
+  def refunded?
+    refunded_at.present?
+  end
+
   def pay_option=(val)
     write_attribute(:financed, val == "payments" )
   end
