@@ -1,5 +1,5 @@
-class Instructor::Enrollments < Instructor::ApplicationController
+class Instructor::EnrollmentsController < Instructor::ApplicationController
   def index
-    @applications = Enrollment.pending
+    @enrollments = Enrollment.pending
   end
 end

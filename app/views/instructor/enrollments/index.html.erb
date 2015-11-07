@@ -6,10 +6,5 @@
     <th>Github</th>
     <th>Why?</th>
   </tr>
-  <tr>
-    <td><%= enrollment.created_at.to_date %></td>
-    <td><%= enrollment.name %></td>
-    <td><%= enrollment.github_url %></td>
-    <td><%= enrollment.why %></td>
-  </tr>
+  <%= render partial: 'enrollment_row', collection: @enrollments %>
 </table>

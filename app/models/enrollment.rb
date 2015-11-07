@@ -7,20 +7,6 @@ class Enrollment < ActiveRecord::Base
 
   has_many   :payments, dependent: :destroy
 
-  scope :billable, -> {
-    # it is price - 10 because I am not charging cents and so therefore
-    # it will otherwise bill one too many times (as the sum of 5 payments
-    # will still be less than the price of the produce)
-    joins("LEFT JOIN payments ON payments.enrollment_id = enrollments.id").
-      group("enrollments.id").
-      having("SUM(payments.amount) < (enrollments.price - 10) AND MAX(payments.created_at) < current_date - interval '1' month")
-  }
-
-  scope :active, -> {
-    where("stripe_id IS NOT NULL AND refunded_at IS NULL")
-  }
-
-  before_create :record_pricing
 
   validates :email,       presence: true,
                           uniqueness: { case_sensitive: false, message: "has already been registered"},
@@ -39,6 +25,24 @@ class Enrollment < ActiveRecord::Base
   validates :financed,    inclusion: { in: [true, false],
                                        message: "must be true or false" }
 
+  scope :billable, -> {
+    # it is price - 10 because I am not charging cents and so therefore
+    # it will otherwise bill one too many times (as the sum of 5 payments
+    # will still be less than the price of the produce)
+    joins("LEFT JOIN payments ON payments.enrollment_id = enrollments.id").
+      group("enrollments.id").
+      having("SUM(payments.amount) < (enrollments.price - 10) AND MAX(payments.created_at) < current_date - interval '1' month")
+  }
+
+  scope :active, -> {
+    where("stripe_id IS NOT NULL AND refunded_at IS NULL")
+  }
+
+  scope :pending, -> {
+    where("stripe_id IS NULL AND refunded_at IS NULL")
+  }
+
+  before_create :record_pricing
   def self.charge_billable_accounts
     billable.map do |e|
       e.payments.create(amount: next_payment_amount).tap do |p|
