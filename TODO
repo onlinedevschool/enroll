@@ -1,0 +1,4 @@
+[ ] Add private session tracking
+      * started_at
+      * ended_at
+      * notes

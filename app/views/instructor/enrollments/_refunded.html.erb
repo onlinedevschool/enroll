@@ -1,0 +1,11 @@
+<h1>refunded applications</h1>
+<%= render 'menu' %>
+<table class="table table-responsive">
+  <tr>
+    <th>Student name</th>
+    <th>Refunded on</th>
+    <th>Reason</th>
+    <th>Amount</th>
+  </tr>
+  <%= render partial: 'refunded_row', collection: refunded %>
+</table>

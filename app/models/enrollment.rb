@@ -42,6 +42,14 @@ class Enrollment < ActiveRecord::Base
     where("stripe_id IS NULL AND refunded_at IS NULL")
   }
 
+  scope :refunded, -> {
+    where("refunded_at IS NOT NULL")
+  }
+
+  scope :oldest, -> {
+    order(created_at: :asc)
+  }
+
   before_create :record_pricing
 
   def self.charge_billable_accounts
@@ -58,6 +66,16 @@ class Enrollment < ActiveRecord::Base
 
   def self.financed_price
     BASE_PRICE + FINANCE_FEE
+  end
+
+  def enrolled_on
+    return nil if payments.none? ||
+                  payments.oldest.first.nil?
+    payments.oldest.first.created_at.to_date
+  end
+
+  def applied_on
+    created_at.to_date
   end
 
   def active?
