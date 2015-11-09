@@ -1,6 +1,11 @@
 class Payment < ActiveRecord::Base
   belongs_to :enrollment
 
+  scope :oldest, -> {
+    order(created_at: :asc)
+  }
+
+
   def charge(token=nil)
     set_payment_source if token
     charge = Stripe::Charge.create(

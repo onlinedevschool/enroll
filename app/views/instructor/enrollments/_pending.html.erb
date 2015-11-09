@@ -1,0 +1,11 @@
+<h1>Pending applications</h1>
+<%= render 'menu' %>
+<table class="table table-responsive">
+  <tr>
+    <th>Student name</th>
+    <th>Applied on</th>
+    <th>Github</th>
+    <th>Why?</th>
+  </tr>
+  <%= render partial: 'pending_row', collection: pending %>
+</table>
