@@ -1,10 +1,16 @@
-<h1>Pending applications</h1>
-<table>
-  <tr>
-    <th>Applied on</th>
-    <th>Student name</th>
-    <th>Github</th>
-    <th>Why?</th>
-  </tr>
-  <%= render partial: 'enrollment_row', collection: @enrollments %>
-</table>
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+  <h1>Pending applications</h1>
+  <table class="table table-responsive">
+    <tr>
+      <th>Applied on</th>
+      <th>Student name</th>
+      <th>Github</th>
+      <th>Why?</th>
+    </tr>
+    <%= render partial: 'enrollment_row', collection: @enrollments %>
+  </table>
+</div>
+</div>
+</div>

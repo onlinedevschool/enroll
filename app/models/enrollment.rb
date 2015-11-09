@@ -43,6 +43,7 @@ class Enrollment < ActiveRecord::Base
   }
 
   before_create :record_pricing
+
   def self.charge_billable_accounts
     billable.map do |e|
       e.payments.create(amount: next_payment_amount).tap do |p|
@@ -60,7 +61,12 @@ class Enrollment < ActiveRecord::Base
   end
 
   def active?
-    stripe_id.present? && !refunded?
+    stripe_id.present? && !refunded? && weeks_left > 0
+  end
+
+  def weeks_left
+    remaining = weeks - (DateTime.now.to_i - payments.first.created_at.to_i)/60/60/24/7
+    remaining < 0 ? 0 : remaining
   end
 
   def refunded?
