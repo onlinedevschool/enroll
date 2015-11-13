@@ -1,0 +1,10 @@
+<h1>Rejected applications</h1>
+<%= render 'menu' %>
+<table class="table table-responsive">
+  <tr>
+    <th>Rejected on</th>
+    <th>Student name</th>
+    <th>Email</th>
+  </tr>
+  <%= render partial: 'rejected_row', collection: rejected %>
+</table>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107181048) do
+ActiveRecord::Schema.define(version: 20151113160056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20151107181048) do
     t.text     "refund_reason"
     t.integer  "refund_amount"
     t.date     "last_contacted_on"
+    t.datetime "rejected_at"
   end
 
   create_table "instructors", force: :cascade do |t|

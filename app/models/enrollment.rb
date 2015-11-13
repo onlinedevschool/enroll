@@ -26,7 +26,7 @@ class Enrollment < ActiveRecord::Base
                                        message: "must be true or false" }
 
   default_scope -> {
-    order(created_at: :asc)
+    oldest
   }
 
   scope :billable, -> {
@@ -39,15 +39,23 @@ class Enrollment < ActiveRecord::Base
   }
 
   scope :active, -> {
-    where("stripe_id IS NOT NULL AND refunded_at IS NULL")
+    where("stripe_id IS NOT NULL AND
+           refunded_at IS NULL AND
+           rejected_at IS NULL")
   }
 
   scope :pending, -> {
-    where("stripe_id IS NULL AND refunded_at IS NULL")
+    where("stripe_id IS NULL AND
+           refunded_at IS NULL AND
+           rejected_at IS NULL")
   }
 
   scope :refunded, -> {
     where("refunded_at IS NOT NULL")
+  }
+
+  scope :rejected, -> {
+    where("rejected_at IS NOT NULL")
   }
 
   scope :oldest, -> {
@@ -80,6 +88,10 @@ class Enrollment < ActiveRecord::Base
 
   def applied_on
     created_at.to_date
+  end
+
+  def rejected_on
+    rejected_at.to_date
   end
 
   def active?
