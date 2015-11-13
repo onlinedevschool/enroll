@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require jquery.turbolinks
 //= require masonry.min
 //= require jquery.payment
 //= require featherlight.min
