@@ -25,6 +25,10 @@ class Enrollment < ActiveRecord::Base
   validates :financed,    inclusion: { in: [true, false],
                                        message: "must be true or false" }
 
+  default_scope -> {
+    order(created_at: :asc)
+  }
+
   scope :billable, -> {
     # it is price - 10 because I am not charging cents and so therefore
     # it will otherwise bill one too many times (as the sum of 5 payments

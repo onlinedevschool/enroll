@@ -1,6 +1,7 @@
 class Affiliate < ActiveRecord::Base
   AFFILIATE_CODE_KEY = :affiliate_code
   AFFILIATE_PAY_PERCENT = 0.14
+
   before_create :generate_unique_code
 
   has_many :affiliate_sales
@@ -15,6 +16,7 @@ class Affiliate < ActiveRecord::Base
     sales = affiliate_sales.where("created_at BETWEEN ? AND ?", datestamp.beginning_of_year, datestamp.end_of_year)
     sales.flat_map(&:enrollment).map(&:price).reduce(:+).to_f * AFFILIATE_PAY_PERCENT
   end
+
 private
 
   def generate_unique_code
