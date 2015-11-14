@@ -1,4 +1,6 @@
-<div class="student">
-  <div class="name"><%= student.name %></div>
-  <div class="enrolled_on"><%= student.enrollment.enrolled_on %></div>
+<div class="pull-left student card">
+<div class="name"><strong><%= student.name %></strong></div>
+  <div class="enrolled-on">Enrolled on: <%= student.enrollment.enrolled_on %></div>
+  <div class="session-count">Session count: <%= student.private_sessions.count %></div>
+  <div class="sessions-link"><%= link_to "View Session details", instructors_private_sessions_path %></div>
 </div>

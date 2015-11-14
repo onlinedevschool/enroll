@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   namespace :instructors do
     resources :enrollments
     resources :students
+    resources :private_sessions
   end
 
   resources :categories, only: %i[index]

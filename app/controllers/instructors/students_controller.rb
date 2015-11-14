@@ -12,7 +12,7 @@ class Instructors::StudentsController < Instructors::ApplicationController
 private
 
   def students
-    @students = Student.all
+    @students ||= Student.all
   end
 
 end

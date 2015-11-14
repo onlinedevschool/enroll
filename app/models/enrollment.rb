@@ -82,9 +82,14 @@ class Enrollment < ActiveRecord::Base
   end
 
   def enrolled_on
+    return nil if enrolled_at.nil?
+    enrolled_at.to_date
+  end
+
+  def enrolled_at
     return nil if payments.none? ||
                   payments.oldest.first.nil?
-    payments.oldest.first.created_at.to_date
+    payments.oldest.first.created_at
   end
 
   def applied_on

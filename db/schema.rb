@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113160056) do
+ActiveRecord::Schema.define(version: 20151114193703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,14 +112,14 @@ ActiveRecord::Schema.define(version: 20151113160056) do
 
   create_table "posts", force: :cascade do |t|
     t.integer  "author_id"
-    t.string   "title",        null: false
+    t.string   "title",                    null: false
     t.string   "permalink"
-    t.text     "html",         null: false
-    t.text     "markdown",     null: false
+    t.text     "html",                     null: false
+    t.text     "markdown",                 null: false
     t.datetime "published_at"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "category_id",  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "category_id",  default: 1, null: false
     t.integer  "series_id"
   end
 
@@ -130,13 +130,15 @@ ActiveRecord::Schema.define(version: 20151113160056) do
 
   create_table "private_sessions", force: :cascade do |t|
     t.integer  "student_id"
-    t.text     "notes",      default: "", null: false
-    t.datetime "started_at",              null: false
+    t.text     "notes",         default: "", null: false
+    t.datetime "started_at",                 null: false
     t.datetime "ended_at"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "instructor_id"
   end
 
+  add_index "private_sessions", ["instructor_id"], name: "index_private_sessions_on_instructor_id", using: :btree
   add_index "private_sessions", ["student_id"], name: "index_private_sessions_on_student_id", using: :btree
 
   create_table "series", force: :cascade do |t|
@@ -158,5 +160,6 @@ ActiveRecord::Schema.define(version: 20151113160056) do
   add_foreign_key "payments", "enrollments"
   add_foreign_key "posts", "authors"
   add_foreign_key "posts", "series"
+  add_foreign_key "private_sessions", "instructors"
   add_foreign_key "private_sessions", "students"
 end
