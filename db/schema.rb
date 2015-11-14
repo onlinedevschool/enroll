@@ -128,6 +128,17 @@ ActiveRecord::Schema.define(version: 20151113160056) do
   add_index "posts", ["permalink"], name: "index_posts_on_permalink", using: :btree
   add_index "posts", ["series_id"], name: "index_posts_on_series_id", using: :btree
 
+  create_table "private_sessions", force: :cascade do |t|
+    t.integer  "student_id"
+    t.text     "notes",      default: "", null: false
+    t.datetime "started_at",              null: false
+    t.datetime "ended_at"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "private_sessions", ["student_id"], name: "index_private_sessions_on_student_id", using: :btree
+
   create_table "series", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at",              null: false
@@ -135,9 +146,17 @@ ActiveRecord::Schema.define(version: 20151113160056) do
     t.string   "permalink",  default: "", null: false
   end
 
+  create_table "students", force: :cascade do |t|
+    t.integer  "enrollment_id", null: false
+    t.text     "notes"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   add_foreign_key "affiliate_sales", "affiliates"
   add_foreign_key "affiliate_sales", "enrollments"
   add_foreign_key "payments", "enrollments"
   add_foreign_key "posts", "authors"
   add_foreign_key "posts", "series"
+  add_foreign_key "private_sessions", "students"
 end

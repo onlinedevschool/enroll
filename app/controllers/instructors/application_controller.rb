@@ -1,4 +1,4 @@
-class Instructor::ApplicationController < ApplicationController
+class Instructors::ApplicationController < ApplicationController
   before_action :authenticate_instructor!
 
   layout 'instructor'

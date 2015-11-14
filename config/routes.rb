@@ -15,8 +15,9 @@ Rails.application.routes.draw do
   end
   get "/authoring" => "authoring/posts#index"
 
-  namespace :instructor do
+  namespace :instructors do
     resources :enrollments
+    resources :students
   end
 
   resources :categories, only: %i[index]

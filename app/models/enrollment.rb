@@ -6,6 +6,7 @@ class Enrollment < ActiveRecord::Base
   BASE_PRICE       = 3999
 
   has_many   :payments, dependent: :destroy
+  has_one    :student
 
 
   validates :email,       presence: true,
