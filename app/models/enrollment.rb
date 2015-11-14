@@ -95,6 +95,10 @@ class Enrollment < ActiveRecord::Base
     rejected_at.to_date
   end
 
+  def refunded_on
+    refunded_at.to_date
+  end
+
   def active?
     stripe_id.present? && !refunded? && weeks_left > 0
   end
