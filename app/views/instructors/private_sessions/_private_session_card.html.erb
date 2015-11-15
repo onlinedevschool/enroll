@@ -1,7 +1,8 @@
 <div class="private-session card card-<%= size  %>">
 <h3><%= private_session_card.student_name %></h3>
 <div class="ocurred-at text-right"><%= private_session_card.ocurred_at_hour %> -
-  <%= private_session_card.ended_at.strftime("%l:%M%P") %></div>
+  <%= private_session_card.ended_at &&
+        private_session_card.ended_at.strftime("%l:%M%P") %></div>
 
 <% if size == "lg" %>
   <h4>Notes</h4>
