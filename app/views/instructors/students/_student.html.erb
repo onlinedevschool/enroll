@@ -1,6 +1,11 @@
-<div class="pull-left student card">
+<div class="pull-left student card-sm">
 <div class="name"><strong><%= student.name %></strong></div>
   <div class="enrolled-on">Enrolled on: <%= student.enrollment.enrolled_on %></div>
   <div class="session-count">Session count: <%= student.private_sessions.count %></div>
-  <div class="sessions-link"><%= link_to "View Session details", instructors_private_sessions_path %></div>
+  <div class="sessions-left">Sessions left: <%= student.enrollment.private_sessions_left %></div>
+  <div class="weeks-left">Weeks left: <%= student.enrollment.weeks_left %></div>
+
+  <div class="text-center">
+    <%= link_to "new session", new_instructors_private_session_path(student_id: student.id) %>
+    | <%= link_to "view history", instructors_private_sessions_path %></div>
 </div>

@@ -6,13 +6,9 @@
         <%= render 'logo' %>
       </div>
       <div class="navbar-collapse collapse">
-        <ul id="author-menu" class="nav navbar-nav">
-          <li><strong>Authoring:</strong></li>
-          <li><%= link_to "posts", authoring_posts_path %></li>
-          <li><%= link_to "categories", authoring_categories_path %></li>
-          <li><%= link_to "series", authoring_series_index_path %></li>
-        </ul>
-        <ul id="top-menu" class="nav navbar-nav pull-right">
+        <ul id="top-menu" class="nav navbar-nav">
+          <li><%= link_to "applications", instructors_enrollment_applications_path %></li>
+          <li><%= link_to "students", instructors_students_path %></li>
           <li><%= link_to "logout", destroy_author_session_path, method: :delete %></li>
         </ul>
       </div>

@@ -1,12 +1,26 @@
-.card {
-  width: 20%;
+.card-sm {
+  border: 1px solid grey;
+  width: 22%;
   margin: 1em;
   padding: 1em;
-  border: 1px solid grey;
 }
 
-.card .name {
+.card-lg {
+  width: 96%;
+  margin: 2em;
+  padding: 2em;
+}
+
+.card h3 {
   font-weight: 600;
+}
+
+.card-lg h3 {
+  font-size: 2em;
+}
+
+.card-sm h3 {
+  font-size: 1.3em;
 }
 
 .student.card {

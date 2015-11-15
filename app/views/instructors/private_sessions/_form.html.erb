@@ -1,0 +1,10 @@
+<%= bootstrap_form_for [:instructors, @private_session] do |f| %>
+  <%= @private_session.student_name %>
+  <%= f.hidden_field :student_id, value: (f.object.student_id || params[:student_id]) %>
+  <%= f.text_field :started_at, value: (f.object.started_at || DateTime.now).strftime("%c") %>
+  <%= f.text_area :notes, rows: 6 %>
+  <%= f.text_area :homework, rows: 6 %>
+  <%= f.text_field :ended_at %>
+
+  <%= f.submit %>
+<%- end %>

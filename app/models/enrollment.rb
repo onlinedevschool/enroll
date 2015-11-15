@@ -113,6 +113,10 @@ class Enrollment < ActiveRecord::Base
     remaining < 0 ? 0 : remaining
   end
 
+  def private_sessions_left
+    (PRIVATE_SESSIONS[WEEK_OPTIONS.index(weeks)] * weeks) - student.private_sessions.count
+  end
+
   def refunded?
     refunded_at.present?
   end

@@ -3,7 +3,8 @@
     <div class="col-md-12">
       <h1>Private Sessions</h1>
 <%= render partial: 'private_session_card',
-           collection: @private_sessions %>
+  collection: @private_sessions,
+  locals: { size: 'sm' } %>
     </div>
   </div>
 </div>
