@@ -16,7 +16,7 @@ class Post < ActiveRecord::Base
   }
 
   scope :no_internals, -> {
-    with_categories.where("categories.name <> 'internal'")
+    where(internal: false)
   }
 
   scope :homepage, -> {
