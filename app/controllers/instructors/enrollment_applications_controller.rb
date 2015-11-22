@@ -5,7 +5,7 @@ class Instructors::EnrollmentApplicationsController < Instructors::ApplicationCo
 
   def destroy
     Enrollment.find(params[:id]).update_attributes(rejected_at: DateTime.now)
-    redirect_to instructors_enrollment_appliations_path
+    redirect_to instructors_enrollment_applications_path
   end
 
 private

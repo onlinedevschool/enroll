@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     @site_brand = "devschool"
     @site_name = "#{@site_brand} - afford a better life!"
     @site_title = "Welcome to the #{@site_brand} website. Learn to code, change your life!"
-    @site_url = "https://onlinedevschool.com"
+    @site_url = "https://devschool.rocks"
     @site_share_image = "#{@site_url}/assets/ods-lg-sq.png"
     @site_description = <<-DESCRIPTION.strip_heredoc
     The #{@site_brand} has one mission. To teach you the skills you need
