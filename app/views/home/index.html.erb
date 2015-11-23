@@ -13,47 +13,7 @@
   </header>
 </div>
 
-<div id="curriculum" name="curriculum" class="section">
-  <div class="container white">
-    <div class="row">
-      <div class="page-header">
-        <h2>Full Stack Web Developer <small>(HTML5/CSS &amp; JavaScript &amp; Ruby on Rails)</small></h2>
-      </div>
-
-      <h3>Complete in only 12-36 weeks depending on your pacing</h3>
-      <h4><%= render 'enrollments/pricing' %></h4>
-      <p>In this track you will learn the languages the web is 
-         written in and in doing so, build several applications using
-         a mix of modern web development technologies.</p>
-
-      <p>In Today's world, there is little division between the front-end
-         and the back-end. The database is an important key piece of
-         building software, but unless it is responsive, meaning it
-         scales well on different screen-sizes, no one will use it.</p>
-
-      <p>The world of web application development is heading hard
-         towards JavaScript as a one-all solution, so our course is heavy
-         on the JavaScript.</p>
-
-      <p>That being said, there is nothing quite like Ruby for it's power
-         and simplicity for use in Object Oriented Programming, so we still
-         teach an excellent Ruby and Rails foundation as well.
-
-      <p><strong>Click a technology</strong> to learn more about it:</p>
-
-      <div class="technologies">
-        <a href="#" data-featherlight="#lbGit"><img src="<%= asset_path('technologies/git.png') %>"></a>
-        <a href="#" data-featherlight="#lbHtml"><img src="<%= asset_path('technologies/html.png') %>"></a>
-        <a href="#" data-featherlight="#lbCss"><img src="<%= asset_path('technologies/css.png') %>"></a>
-        <a href="#" data-featherlight="#lbJs"><img src="<%= asset_path('technologies/javascript.png') %>"></a>
-        <a href="#" data-featherlight="#lbRuby"><img src="<%= asset_path('technologies/ruby.png') %>"></a>
-        <a href="#" data-featherlight="#lbRails"><img src="<%= asset_path('technologies/rails.png') %>"></a>
-        <a href="#" data-featherlight="#lbPostgres"><img src="<%= asset_path('technologies/postgres.png') %>"></a>
-      </div>
-
-    </div>
-  </div>
-</div>
+<%= render 'full_stack' %>
 
 <div class="clearfix random-person home-slide">
   <div class="well">
@@ -66,101 +26,11 @@
   </div>
 </div>
 
-<div id="howitworks" name="howitworks" class="section">
-  <div class="container">
-    <div class="row">
-      <h2>How it works</h2>
-      <div class="col-md-12">
-        <h3>Move at your own pace, in your own home</h3>
-        <p>Not everyone learns at the same speed and ultimately, each person's
-           journey is their own to take. We help you pace yourself based on your
-           availability and your goals!</p>
-        <table class="pace-options-table">
-          <tr>
-            <th colspan=4>Pacing options</th>
-          </tr>
-          <tbody>
-            <tr class="pace-option">
-              <td class="pace-option-pace hidden-xs">Aggressive pace</td>
-              <td class="pace-option-weeks">12 weeks</td>
-              <td class="pace-option-hours">35 hours/wk</td>
-              <td class="pace-option-1on1s">3 private sessions/wk</td>
-            </tr>
-            <tr class="pace-option">
-              <td class="pace-option-pace hidden-xs">Moderate pace</td>
-              <td class="pace-option-weeks">18 weeks</td>
-              <td class="pace-option-hours">22 hours/wk</td>
-              <td class="pace-option-1on1s">2 private sessions/wk</td>
-            </tr>
-            <tr class="pace-option">
-              <td class="pace-option-pace hidden-xs">Relaxed pace</td>
-              <td class="pace-option-weeks">36 weeks</td>
-              <td class="pace-option-hours">12 hours/wk</td>
-              <td class="pace-option-1on1s">1 private session/wk</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+<%= render 'how_it_works' %>
 
-    <div class="row">
-        <p>At the Devschool, we don't coddle you with inefficient, beginner
-           tools. We don't think you are incapable of learning the real shit
-           right off the bat. We ease you directly into tools that will make
-           you not only look like a digital wizard to other coders, but be
-           more efficient as well!</p>
-      <div class="col-md-5">
-        <ul class="checks">
-          <li>Master powerful tools like bash and vim</li>
-          <li>Get comfortable with the unix shell</li>
-          <li>Learn to automate tasks and scrape data</li>
-          <li>Get the edge you need to get the job</li>
-        </ul>
-      </div>
-      <div class="col-md-5">
-        <ul class="checks">
-          <li>Access you instructor 4 days a week!</li>
-          <li>Attend Weekly private lessons</li>
-          <li>Attend Weekly group session</li>
-          <li>Pair program with other students</li>
-        </ul>
-      </div>
-    </div>
+<%= render 'your_instructor' %>
 
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Online collaboration is simple</h2>
-        <img class="img-responsive" src="<%= asset_path('collaboration.png') %>" class="collaboration-img"/>
-        <p>We use a combination of screen and terminal sharing and audio chat in order
-        to collaborate on the multiple projects you will build while at Devschool. 
-        What kind of projects? Well that entirely depends on what interests you. At
-        Devschool we don't have a canned curriculum, instead you are trained by building
-        real applications under the guidance of your instructor!</p>
-      </div>
-    </div>
-
-    <h2>Additional course-ware provided by our friends at CodeSchool</h2>
-    <div class="row">
-      <div class="col-md-3"><img src="<%= asset_path('codeschool/git-pt-1.png') %>"    class="img-responsive courseware-img"/></div>
-      <div class="col-md-3"><img src="<%= asset_path('codeschool/html-pt-1.png') %>"   class="img-responsive courseware-img"/></div>
-      <div class="col-md-3"><img src="<%= asset_path('codeschool/css-pt-1.png') %>"    class="img-responsive courseware-img"/></div>
-      <div class="col-md-3"><img src="<%= asset_path('codeschool/rails-pt-1.png') %>"  class="img-responsive courseware-img"/></div>
-    </div>
-    <div class="row">
-      <div class="col-md-3"><img src="<%= asset_path('codeschool/js-pt-1.png') %>"     class="img-responsive courseware-img"/></div>
-      <div class="col-md-3"><img src="<%= asset_path('codeschool/sql-pt-1.png') %>"    class="img-responsive courseware-img"/></div>
-      <div class="col-md-3"><img src="<%= asset_path('codeschool/html-email.png') %>"  class="img-responsive courseware-img"/></div>
-      <div class="col-md-3"><img src="<%= asset_path('codeschool/jquery-pt-1.png') %>" class="img-responsive courseware-img"/></div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Use the computer you already have</h2>
-        <img class="img-responsive" src="<%= asset_path('ossupport.png') %>" />
-      </div>
-    </div>
-  </div>
-</div>
+<%= render 'faq' %>
 
 <div id="reviews" name="reviews" class="section">
   <div class="container white"> 
