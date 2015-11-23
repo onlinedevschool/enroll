@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   get "/authoring" => "authoring/posts#index"
 
   namespace :instructors do
-    resources :enrollment_applications
+    resources :enrollment_applications, only: %i[index destroy]
+    resources :student_interview_invitations, only: %i[create]
     resources :students
     resources :private_sessions
   end

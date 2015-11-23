@@ -1,5 +1,6 @@
 <ul class="list-inline list-unstyled center-block">
-  <li><a href="?q=pending">Pending</a></li>
-  <li><a href="?q=rejected">Rejected</a></li>
+<li><a class="pill <%= "active" if params[:q].nil? || params[:q] == "pending" %>" href="?q=pending">Pending</a></li>
+  <li><a class="pill <%= "active" if params[:q] == "interviewing" %>" href="?q=interviewing">Interviewing</a></li>
+  <li><a class="pill <%= "active" if params[:q] == "rejected" %>" href="?q=rejected">Rejected</a></li>
 </ul>
 

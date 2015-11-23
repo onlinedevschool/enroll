@@ -45,9 +45,15 @@ class Enrollment < ActiveRecord::Base
            rejected_at IS NULL")
   }
 
+  scope :interviewing, -> {
+    where("interview_invitation_sent_at >= ? AND
+           stripe_id IS NULL", 2.weeks.ago)
+  }
+
   scope :pending, -> {
     where("stripe_id IS NULL AND
            refunded_at IS NULL AND
+           interview_invitation_sent_at IS NULL AND
            rejected_at IS NULL")
   }
 
@@ -79,6 +85,20 @@ class Enrollment < ActiveRecord::Base
 
   def self.financed_price
     BASE_PRICE + FINANCE_FEE
+  end
+
+  def invite_to_interview!
+    InterviewInvitationMailer.notify(self).deliver_now
+    update_attributes(interview_invitation_sent_at: DateTime.now)
+  end
+
+  def first_name
+    name.split(" ").first
+  end
+
+  def interview_invitation_sent_on
+    interview_invitation_sent_at &&
+      interview_invitation_sent_at.to_date
   end
 
   def enrolled_on

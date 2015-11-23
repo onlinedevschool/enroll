@@ -63,3 +63,14 @@ img.logo {
   }
 }
 
+.pill {
+  padding: 4px 10px;
+  color: black;
+  border-radius: 8px;
+  background-color: #eee;
+}
+
+.pill.active {
+  color: white;
+  background-color: red;
+}

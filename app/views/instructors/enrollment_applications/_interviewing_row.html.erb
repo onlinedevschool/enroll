@@ -1,0 +1,9 @@
+  <tr>
+    <td><%= interviewing_row.id %></td>
+    <td><%= interviewing_row.interview_invitation_sent_on %></td>
+    <td><%= interviewing_row.name %></td>
+    <td><%= interviewing_row.email %></td>
+    <td><%= link_to "reject", instructors_enrollment_application_path(interviewing_row), method: :delete, data: { confirm: "You are about to reject #{interviewing_row.name}'s application. Are you sure?" } %></td>
+    </td>
+  </tr>
+

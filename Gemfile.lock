@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.3.8)
     arel (6.0.3)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
@@ -97,6 +98,8 @@ GEM
       railties (>= 3.1.0)
       turbolinks
     json (1.8.3)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     less (2.6.0)
       commonjs (~> 0.2.7)
     less-rails (2.7.0)
@@ -104,6 +107,8 @@ GEM
       less (~> 2.6.0)
       sprockets (> 2, < 4)
       tilt
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     libv8 (3.16.14.11)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
@@ -237,6 +242,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   less-rails
+  letter_opener
   minitest
   minitest-rails
   minitest-stub_any_instance
@@ -257,4 +263,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.5
+   1.10.6

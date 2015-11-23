@@ -5,6 +5,8 @@
     <td><%= pending_row.email %></td>
     <td><%= pending_row.github_url %></td>
     <td><%= pending_row.why %></td>
+    <td><%= link_to "interview", instructors_student_interview_invitations_path(enrollment_id: pending_row), method: :post, data: { confirm: "You are about to email #{pending_row.name} and ask them to interview at Devschool. Are you sure?" } %></td>
     <td><%= link_to "reject", instructors_enrollment_application_path(pending_row), method: :delete, data: { confirm: "You are about to reject #{pending_row.name}'s application. Are you sure?" } %></td>
+    </td>
   </tr>
 

@@ -1,0 +1,12 @@
+<h1>interviewing applications</h1>
+<%= render 'menu' %>
+<table class="table table-striped table-responsive">
+  <tr>
+    <th>ID</th>
+    <th>Emailed on</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+  </tr>
+  <%= render partial: 'interviewing_row', collection: interviewing %>
+</table>
