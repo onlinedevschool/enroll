@@ -145,8 +145,7 @@ hr {
 .well {
   background: #fff;
   border-radius: 1em;
-  margin: 0;
-  padding: 0;
+  margin: 1em 6em;
 }
 
 .review-callout {
@@ -237,6 +236,12 @@ hr {
   body .header {
     background-attachment: scroll;
   }
+
+  .well {
+    padding: 1em;
+    margin: 1em 6em;
+  }
+
 }
 
 /*ipad portrait*/
@@ -244,13 +249,25 @@ hr {
   .header {
     background-attachment: scroll;
   }
+
+  .well {
+    padding: 1em;
+    margin: 1em 1em;
+  }
+
 }
 
 @media screen and (max-width:769px) {
+
+  .well {
+    padding: 1em;
+    margin: 1em 4em;
+  }
+
   .navbar-brand img.logo {
-    width: 120px;
-    margin-top: 1px;
-    float: left;
+    width: 160px;
+    position: relative;
+    top: 4px;
   }
 
   .person-1, .person-2, .person-3, 

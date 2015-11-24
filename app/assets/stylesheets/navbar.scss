@@ -4,7 +4,13 @@ a.btn-danger.btn.enroll {
 
 .navbar-default .navbar-nav > li > a {
   color: #fff;
+  font-weight: bold;
 }
+
+ul#top-menu li:last-child {
+  margin-right: 1em;
+}
+
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus,
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,

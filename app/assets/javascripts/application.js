@@ -18,3 +18,19 @@
 //= require featherlight.min
 //= require smooth-scroll.min
 //= require_tree .
+//
+
+$(document).ready(function() {
+  var logoImg = new Image();
+  logoImg = '/assets/devschool-logo-v4.png';
+  var ctlLogo = $("img.logo");
+  ctlLogo.on("mouseover", function() {
+    console.debug(this);
+    $(this).attr('src', $(this).attr('src').replace('.png', '-hover.png'));
+  });
+
+  ctlLogo.on("mouseout", function() {
+    console.debug(this);
+    $(this).attr('src', $(this).attr('src').replace('-hover.png', '.png'));
+  });
+});
