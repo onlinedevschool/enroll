@@ -17,7 +17,6 @@ hr {
   padding-top: 5em;
   text-align: center;
   background-attachment: relative;
-  min-height: 92%;
   width: 100%;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
@@ -146,8 +145,8 @@ hr {
 .well {
   background: #fff;
   border-radius: 1em;
-  margin: 1em 10%;
-  padding: 2em 4em;
+  margin: 0;
+  padding: 0;
 }
 
 .review-callout {
@@ -368,9 +367,6 @@ hr {
      }
   }
 
-  .well {
-    padding: 1em;
-  }
 }
 
 .feather {
