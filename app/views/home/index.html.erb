@@ -1,127 +1,71 @@
 <div id="home" name="home" class="section">
 
-  <header class="clearfix person-4 home-slide">
-    <div class="well">
-      <h1>No College Degree Required</h1>
-      <h2>Welcome to your new life as a Web Developer</h2>
-      <p>In as little as 12 weeks you could get a job for as much as $50,000 a year! </p>
-      <h4>Check out this <strong>article</strong> from 
-        the <span class="article_source">New York Times</span>
-        - <a class="article_link" href="http://www.nytimes.com/2015/07/29/technology/code-academy-as-career-game-changer.html"
-                                  target="_blank">As Tech Booms, Workers Turn to Coding for Career Change</a></h4>
-    </div>
-  </header>
-</div>
+<header class="clearfix random-person home-slide">
+  <div class="well">
+    <h1>100% of our Grads have jobs!</h1>
+    <h2>Our policy is Enrollment to Hire and we mean it!</h2>
+    <p>We have a network of NGO partnerships to get you your first job</p>
+    <h4> <span class="article_source">Meet NewStoryCharity</span>
+      - <a class="article_link" href="https://newstorycharity.org"
+                                target="_blank">They help organize and fund houses for homeless families, and we help them do it. You could work there!</a></h4>
+  </div>
+</header>
 
 <%= render 'full_stack' %>
 
 <div class="clearfix random-person home-slide">
   <div class="well">
-    <h1>100% of our Grads have jobs!</h1>
-    <h2>Our policy is Enrollment to Hire and we mean it!</h2>
-    <p>We have a network of NGO partnerships to get you your first job</p>
-    <h4> <span class="article_source">US News Money</span>
-      - <a class="article_link" href="http://money.usnews.com/money/blogs/outside-voices-careers/2014/03/26/thinking-about-a-nonprofit-job-heres-what-you-should-know"
-                                target="_blank">What should I know about working for an NGO?</a></h4>
+    <h1>No College Degree Required</h1>
+    <h2>Welcome to your new life as a Web Developer</h2>
+    <p>In as little as 12 weeks you could get a job for as much as $50,000 a year! </p>
+    <h4>Check out this <strong>article</strong> from 
+      the <span class="article_source">New York Times</span>
+      - <a class="article_link" href="http://www.nytimes.com/2015/07/29/technology/code-academy-as-career-game-changer.html"
+                                target="_blank">As Tech Booms, Workers Turn to Coding for Career Change</a></h4>
   </div>
 </div>
 
 <%= render 'how_it_works' %>
-
-<%= render 'your_instructor' %>
-
-<%= render 'faq' %>
-
-<div id="reviews" name="reviews" class="section">
-  <div class="container white"> 
-    <div class="row">
-      <h2>What do former students think of us?</h2>
-      <div class="col-md-12">
-        <img src="<%= asset_path('reviewers/jorge.jpg') %>" class="review-image-lg" align="left">
-        <div class="review-name-lg">Jorge Madrid - Bogotá Columbia</div>
-        <p class="review-text">My Devschool instructor, Jim is the best programming teacher I have had. He is fun, easy going, and when things get hard he doesn't mind repeating a concept until you get the point, and I learned a lot from him that my bootcamp missed.</p>
-        <p class="review-text">Devschool not only helped me learn the skills I would need day to day, Jim also helped me prepare for the interview! I highly recommend Devschool!</p>
-      </div> <!-- end col-md-6 -->
-    </div> <!-- end row -->
-
-    <div class="row">
-      <div class="col-md-12">
-        <img src="<%= asset_path('reviewers/eric.jpg') %>" class="review-image-lg" align="right">
-        <div class="review-name-lg">Eric Douglas - Ohio USA</div>
-        <p class="review-text">Coming from a business background, I found programming intriguing but sometimes very confusing. My instructor excelled at simplifying concepts into easy to repeat axioms and patterns.</p>
-        <p class="review-text">I found the education style at Devschool to be a very personal experience. It included pair programming and an audio chat. I would definitely recommend Devschool to anyone who wants to become a web developer.</p>
-      </div> <!-- end col-md-6 -->
-    </div> <!-- end row -->
-
-    <div class="row">
-      <div class="col-md-12">
-        <img src="<%= asset_path('reviewers/holden.jpg') %>" class="review-image-lg" align="left">
-        <div class="review-name-lg">Meghan Miller - NYC USA</div>
-        <p class="review-text">At Devschool I learned the skills that I needed to land the job I have today. I completed my Web Development course in 18 weeks as I had other obligations and Devschool was flexible enough for me to handle both!</p>
-        <p class="review-text">I would recommend the Web Developers course at Devschool to anyone who wants to cut through the cruft and really, really learn the skills they will need to build modern web applications.</p>
-      </div> <!-- end col-md-6 -->
-    </div> <!-- end row -->
-  </div> <!-- end container -->
-
-  <div class="row dark">
-    <div class="container masonry">
-      <div class="review-callout">
-        <div class="arrow_box">
-          <p>My time at Devschool was very helpful! My mentor and I could walk through the problem and find the best solution reducing the impact on my current code!</p>
-          <p>Jim covered an amazing amount of material and he was always available when I needed his help and advice.</p>
-        </div>
-        <div class="review-callout-name">João Daniel</div>
-      </div>
-      <div class="review-callout">
-        <div class="arrow_box">
-          <p>My instructor at Devschool, Jim, was very quick and knowledgeable.</p>
-          <p>He offered good advice on how to structure my code, and helped me understand how to make web pages load fast using tricks of the trade. My focus was on Ruby on Rails and I found Jim to be an absolute expert on the topic!</p>
-        </div>
-        <div class="review-callout-name">Stefano Schiavi</div>
-      </div>
-      <div class="review-callout">
-        <div class="arrow_box">
-          <p>I needed to create a back-end API for my HTML/JavaScript application. At Devschool I learned the skills I needed to create a Ruby back-end and to tie it to my app using Javascript and AJAX.</p>
-          <p>I also finally can make sense of CSS and can make my HTML elements styled the way I want them styled.</p>
-        </div>
-        <div class="review-callout-name">Suresh Kumar R</div>
-      </div>
-      <div class="review-callout">
-        <div class="arrow_box">
-          <p>My instructor helped me solve a Linux problem that had been plaguing me for weeks! I have attended Bloc and Dev Bootcamp and I could never find a mentor who knew anything about Linux.</p>
-          <p>It was pretty awesome to find out not only did my Devschool instructor know all about Linux, he wasn't interested in getting me to switch to a Mac when Linux works just fine for web development. Cheers Jim!</p>
-        </div>
-        <div class="review-callout-name">Spencer Ryan</div>
-      </div>
-      <div class="review-callout">
-        <div class="arrow_box">
-          <p>Always excellent advice from Devschool! Very detailed explanations every step of the way. My instructor, Jim also gave me much better 'homework' than I received on the HARTL tutorial.</p>
-          <p>It felt less like I was checking off boxes and more like I was actually learning something for a change. I would recommend Devschool to anyone interested in becoming a developer.</p>
-        </div>
-        <div class="review-callout-name">Neil Patel</div>
-      </div>
-      <div class="review-callout">
-        <div class="arrow_box">
-          <p>Jim OKelly really knew his stuff! He gave quality explanations, handled my problems efficiently and is aware of the service I was paying for.</p>
-          <p>I strongly recommend him as a mentor and Devschool in general as a place to get your technology education on. I went in feeling stupid and I came out feeling confident!</p>
-        </div>
-        <div class="review-callout-name">Warren Kushner</div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="clearfix random-person home-slide">
   <div class="well">
     <h1>No Mountain of Debt Required</h1>
     <h2>Web Developers are hired on Talent, not degrees</h2>
     <p>You don't need a <strong>mountain of debt</strong> or a <strong>college degree</strong> to get hired.</p>
-    oo
     <h4> <span class="article_source">Times - Business</span>
       - <a class="article_link" href="http://business.time.com/2013/05/21/the-7000-computer-science-degree-and-the-future-of-higher-education/"
                                 target="_blank">The $7,000 Computer Science Degree — and the Future of Higher Education</a></h4>
   </div>
 </div>
+
+<%= render 'your_instructor' %>
+
+<div class="clearfix random-person home-slide">
+  <div class="well">
+    <h1>We teach you to code like a hacker!</h1>
+    <h2>Expert tooling and training on day 1</h2>
+    <p>You will be coding in the Terminal like a pro from the very first week of your study at the Devschool. You will learn VIM.
+       By the end of your first month you will be comfortable chaining a few UNIX commands together to make magic
+       happen!</p>
+  </div>
+</div>
+
+<%= render 'faq' %>
+
+<h3>We strive for diversity and to foster the Devschool Culture</h3>
+
+<div class="clearfix random-person home-slide">
+  <div class="well">
+    <h1>Culture is VERY important to us!</h1>
+    <h2>Wanting to become great is the best quality</h2>
+    <p>Acceptance to the school is based on conversations you will have with a current student,
+       Mae, our Student Resources Director, and then your future Instructor. Along the way we
+       will discuss culture answer your questions and you get to hear first hand how it works from a student.</p>
+  </div>
+</div>
+
+
+<%= render 'reviews' %>
 
 <div id="apply" name="apply" class="section padded">
   <div class="container">
@@ -136,93 +80,4 @@
   </div>
 </div>
 
-<div id="lbGit" class="feather">
-  <img align="left" width="200px" src="<%= asset_path('technologies/git.png') %>">
-  <p><strong>Git</strong> is a tool used by developers to manage their projects in a 
-  <strong>safe manner</strong> and it provides an important mechanism
-  to <strong>backup code</strong> and <strong>retrieve lost work</strong>.</p>
-  <p>It also allows <strong>multiple developers</strong> to work together on the same files at
-  the same time <strong>without interfering</strong> with each other's work. You can even
-  <strong>work offline</strong> and update when you get
-  a connection.</p>
-  <p>Since <strong>Git</strong> is a "cornerstone" tool, we start off teaching
-  it right away, along with the <strong><a href="#" data-featherlight="#lbUnix">
-      UNIX Terminal</a></strong> and <strong><a href="#" data-featherlight="#lbVim">
-      Vim</a></strong>.</p>
-</div>
-
-<div id="lbHtml" class="feather">
-  <img align="left" width="200px" src="<%= asset_path('technologies/html.png') %>">
-  <p><strong>HTML</strong> is the backbone of the Interwebs. It is the <strong>structure and
-    content</strong> element. You are right now reading words wrapped in <strong>
-    HTML</strong>.</p>
-  <p><strong>HTML5</strong> makes huge strides in adding functionality to the webs like
-  <strong>native video and audio</strong> without the use of Flash. There is even
-  a spec to handle video conferencing called WebRTC!</p>
-</div>
-
-<div id="lbCss" class="feather">
-  <img align="left" width="200px" src="<%= asset_path('technologies/css.png') %>">
-  <p>If HTML is the backbone of the interwebs, than <strong>CSS</strong> is the
-  clothes, hair, and possibly make-up, if you are into that.</p>
-  <p>But <strong>CSS</strong> is more than just the color and typeface. It is also
-  responsible for <strong>responsive design</strong> and element positioning in
-  general. It is an invaluable skill when <strong>selling yourself</strong>
-  as a new Web Developer.</p>
-</div>
-
-<div id="lbJs" class="feather">
-  <img align="left" width="200px" src="<%= asset_path('technologies/javascript.png') %>">
-  <p><strong>JavaScript</strong> is THE language of the Internet. It is the <strong>
-    only</strong> scripting language native to all browsers. If you want your app
-  to something more than just sit there and look pretty you need <strong>JavaScript
-  </strong> to get a job today in Web Development.</p>
-  <p>The <strong>number one skill today</strong> if you want a job in programming is
-  <strong>JavaScript</strong>. More than <strong>Ruby</strong>, more than <strong>
-    Rails</strong>, and more than <strong>PHP</strong>.</p>
-  <p>Along with interaction, <strong>JavaScript</strong> provides mechanisms to
-  request data from another location on the Internet. You can use it to parse
-  <strong>NASA, NASCAR, and NASDAQ</strong> data.</p>
-</div>
-
-<div id="lbRuby" class="feather">
-  <img align="left" width="200px" src="<%= asset_path('technologies/ruby.png') %>">
-  <p>Ruby is a <strong>server-side language</strong> and it is used to work
-  with databases and write complex software in a <strong>friendly, readable
-  </strong> manner.</p>
-  <p>In fact, <strong>Ruby</strong> is a programming language <strong>designed</strong>
-  for <strong>optimizing developer joy!</strong> It is easy to pick up and is
-  powerful enough to take years to master.</p>
-  <p>At Devschool we offer <strong>advanced courses</strong> in Ruby and 
-  <strong>Ruby on Rails</strong> as well!</p>
-</div>
-
-<div id="lbUnix" class="feather">
-  <img align="left" width="200px" src="<%= asset_path('technologies/terminal.png') %>">
-  <p>The main underpinning of all web software is the network protocols that lie
-     underneath. These are all based on standards set by UNIX. UNIX also comes
-     with an amazing "bag of tricks", little, powerful programs that can be
-     "chained" together to create amazing functionality.</p>
-</div>
-
-<div id="lbVim" class="feather">
-  <img align="left" width="200px" src="<%= asset_path('technologies/vim.png') %>">
-  <p>Vim is an amazing way to edit text of all kinds, from books, to software code. It
-  is a highly adaptable <strong><a href="#" data-featherlight="#lbUnix">
-  UNIX Terminal</a></strong> program that can be run locally, or even over
-  a network.</p>
-</div>
-
-<div id="lbRails" class="feather">
-  <img align="left" width="200px" src="<%= asset_path('technologies/rails.png') %>">
-  <p>Ruby on Rails was a game-changer. It allows web applications to be built 
-  much faster and with a more reliable common interface. It was built on the power
-  and ellegance of <a href="#" data-featherlight="#lbRuby"><img src="<%= asset_path('technologies/ruby.png') %>"></a></p>
-</div>
-
-<div id="lbPostgres" class="feather">
-  <img align="left" width="200px" src="<%= asset_path('technologies/postgres.png') %>">
-  <p>Postgres is the industry gold standard SQL engine. SQL means <em>S</em>tructured
-     <em>Q</em>uery <em>L</em>anguage, or more simply, a way to search and return
-     data stored in a Relational Database.</p>
-</div>
+<%= render 'techs' %>
