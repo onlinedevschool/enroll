@@ -51,6 +51,7 @@ gem 'stripe'
 
 group :production do
    gem 'rails_12factor'
+   gem 'newrelic_rpm'
    gem 'puma'
 end
 
