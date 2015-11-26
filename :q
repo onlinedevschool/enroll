@@ -10,7 +10,6 @@ $(document).ready ->
       url = window.location.pathname.replace("/new",".json")
       res = $.post url, form.serialize()
       res.done ->
-        ga 'create', 'UA-66453024-3', 'auto'
         ga 'send',
           hitType: 'event'
           eventCategory: 'Payments'
@@ -21,8 +20,8 @@ $(document).ready ->
                 "<h2>Welcome to Devschool!</h2>",
                 "<h4>Your payment was successfully processed</h4>",
                 "</div>",
-                "<p>Jim OKelly will be your new web development instructor!",
-                "He will email you today with instructions on how to proceed and enter the chat room.</p>"]
+                "<p>Jim OKelly will be your new web development instructor!</p>",
+                "<p>He will email you today with instructions on how to proceed and enter the chat room.</p>"]
 
         console.debug(html)
         $(".pane").html(html.join("\n"))
