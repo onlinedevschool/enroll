@@ -48,6 +48,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'dotenv-rails'
 # use stripe
 gem 'stripe'
+# fontawesome faster
+gem "font-awesome-rails"
 
 group :production do
    gem 'rails_12factor'
