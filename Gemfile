@@ -52,6 +52,7 @@ gem 'stripe'
 gem "font-awesome-rails"
 
 group :production do
+   gem "rack-timeout"
    gem 'rails_12factor'
    gem 'newrelic_rpm'
    gem 'puma'
