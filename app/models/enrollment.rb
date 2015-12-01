@@ -17,7 +17,6 @@ class Enrollment < ActiveRecord::Base
 
   validates :why,         presence: true
 
-  validates :github_url,  presence: true
 
   validates :weeks,       presence: true,
                           inclusion: { in: WEEK_OPTIONS,
