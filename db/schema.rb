@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151123035739) do
+ActiveRecord::Schema.define(version: 20151201160743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 20151123035739) do
     t.integer  "price"
     t.string   "stripe_id"
     t.boolean  "financed"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.text     "why"
     t.string   "github_url"
     t.datetime "accepted_at"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20151123035739) do
     t.date     "last_contacted_on"
     t.datetime "rejected_at"
     t.datetime "interview_invitation_sent_at"
+    t.boolean  "paused",                       default: false, null: false
   end
 
   create_table "instructors", force: :cascade do |t|
@@ -152,42 +153,11 @@ ActiveRecord::Schema.define(version: 20151123035739) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.integer  "enrollment_id",                       null: false
+    t.integer  "enrollment_id", null: false
     t.text     "notes"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
-    t.string   "invitation_token"
-    t.datetime "invitation_created_at"
-    t.datetime "invitation_sent_at"
-    t.datetime "invitation_accepted_at"
-    t.integer  "invitation_limit"
-    t.integer  "invited_by_id"
-    t.string   "invited_by_type"
-    t.integer  "invitations_count",      default: 0
-    t.string   "name"
-    t.text     "goals"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
-
-  add_index "students", ["confirmation_token"], name: "index_students_on_confirmation_token", unique: true, using: :btree
-  add_index "students", ["email"], name: "index_students_on_email", unique: true, using: :btree
-  add_index "students", ["invitation_token"], name: "index_students_on_invitation_token", unique: true, using: :btree
-  add_index "students", ["invitations_count"], name: "index_students_on_invitations_count", using: :btree
-  add_index "students", ["invited_by_id"], name: "index_students_on_invited_by_id", using: :btree
-  add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "affiliate_sales", "affiliates"
   add_foreign_key "affiliate_sales", "enrollments"

@@ -35,7 +35,9 @@ class Enrollment < ActiveRecord::Base
     # will still be less than the price of the produce)
     joins("LEFT JOIN payments ON payments.enrollment_id = enrollments.id").
       group("enrollments.id").
-      having("SUM(payments.amount) < (enrollments.price - 10) AND MAX(payments.created_at) < current_date - interval '1' month")
+      having("SUM(payments.amount) < (enrollments.price - 10) AND
+              MAX(payments.created_at) < current_date - interval '1' month AND
+              paused <> true")
   }
 
   scope :active, -> {
