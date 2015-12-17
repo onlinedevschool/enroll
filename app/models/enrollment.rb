@@ -3,7 +3,7 @@ class Enrollment < ActiveRecord::Base
   PRIVATE_SESSIONS = [3, 2, 1]
   FINANCE_FEE      = 980
   PAYMENT_COUNT    = 5
-  BASE_PRICE       = 3999
+  BASE_PRICE       = 4999
 
   has_many   :payments, dependent: :destroy
   has_one    :student
@@ -17,10 +17,6 @@ class Enrollment < ActiveRecord::Base
 
   validates :why,         presence: true
 
-
-  validates :weeks,       presence: true,
-                          inclusion: { in: WEEK_OPTIONS,
-                                       message: "must be one of #{WEEK_OPTIONS.join(', ')}" }
 
   validates :financed,    inclusion: { in: [true, false],
                                        message: "must be true or false" }
@@ -155,7 +151,7 @@ class Enrollment < ActiveRecord::Base
   end
 
   def adjusted_price
-    financed? ? self.financed_price : price
+    financed? ? Enrollment.financed_price : price
   end
 
   def next_payment_amount

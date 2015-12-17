@@ -1,6 +1,8 @@
 class EnrollmentsController < ApplicationController
   respond_to :json
 
+  skip_before_action :verify_authenticity_token, only: [:create]
+
   def index
     respond_with(enrollments)
   end
@@ -10,8 +12,9 @@ class EnrollmentsController < ApplicationController
   end
 
   def create
-    new_enrollment(enrollment_params).save
-    notify_acceptance_team(new_enrollment)
+    if new_enrollment(enrollment_params).save
+      notify_acceptance_team(new_enrollment)
+    end
     respond_with(new_enrollment)
   end
 

@@ -8,6 +8,16 @@ Bundler.require(*Rails.groups)
 
 module Enroll
   class Application < Rails::Application
+
+    config.middleware.insert_before 0, "Rack::Cors" do
+      allow do
+        origins '*'
+        resource '/enrollments.json',
+          :headers => :any,
+          :methods => [:post, :options]
+      end
+    end
+
     # Use the responders controller from the responders gem
     config.app_generators.scaffold_controller :responders_controller
 
