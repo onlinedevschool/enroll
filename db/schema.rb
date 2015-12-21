@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201160743) do
+ActiveRecord::Schema.define(version: 20151221233238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,33 +32,6 @@ ActiveRecord::Schema.define(version: 20151201160743) do
     t.string   "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "authors", force: :cascade do |t|
-    t.string   "name",                                null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "url"
-  end
-
-  add_index "authors", ["email"], name: "index_authors_on_email", unique: true, using: :btree
-  add_index "authors", ["reset_password_token"], name: "index_authors_on_reset_password_token", unique: true, using: :btree
-
-  create_table "categories", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "permalink",  default: "", null: false
   end
 
   create_table "enrollments", force: :cascade do |t|
@@ -112,25 +85,6 @@ ActiveRecord::Schema.define(version: 20151201160743) do
 
   add_index "payments", ["enrollment_id"], name: "index_payments_on_enrollment_id", using: :btree
 
-  create_table "posts", force: :cascade do |t|
-    t.integer  "author_id"
-    t.string   "title",                        null: false
-    t.string   "permalink"
-    t.text     "html",                         null: false
-    t.text     "markdown",                     null: false
-    t.datetime "published_at"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.integer  "category_id",  default: 1,     null: false
-    t.integer  "series_id"
-    t.boolean  "internal",     default: false
-  end
-
-  add_index "posts", ["author_id"], name: "index_posts_on_author_id", using: :btree
-  add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
-  add_index "posts", ["permalink"], name: "index_posts_on_permalink", using: :btree
-  add_index "posts", ["series_id"], name: "index_posts_on_series_id", using: :btree
-
   create_table "private_sessions", force: :cascade do |t|
     t.integer  "student_id"
     t.text     "notes",         default: "", null: false
@@ -145,13 +99,6 @@ ActiveRecord::Schema.define(version: 20151201160743) do
   add_index "private_sessions", ["instructor_id"], name: "index_private_sessions_on_instructor_id", using: :btree
   add_index "private_sessions", ["student_id"], name: "index_private_sessions_on_student_id", using: :btree
 
-  create_table "series", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "permalink",  default: "", null: false
-  end
-
   create_table "students", force: :cascade do |t|
     t.integer  "enrollment_id", null: false
     t.text     "notes"
@@ -162,8 +109,6 @@ ActiveRecord::Schema.define(version: 20151201160743) do
   add_foreign_key "affiliate_sales", "affiliates"
   add_foreign_key "affiliate_sales", "enrollments"
   add_foreign_key "payments", "enrollments"
-  add_foreign_key "posts", "authors"
-  add_foreign_key "posts", "series"
   add_foreign_key "private_sessions", "instructors"
   add_foreign_key "private_sessions", "students"
 end

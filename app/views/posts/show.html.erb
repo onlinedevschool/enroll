@@ -1,8 +1,0 @@
-<%- content_for(:title) do %>
-  <%= strip_tags(@post.title) %>
-<%- end %>
-<%- content_for(:head) do %>
-  <%= render 'article_social_cards' %>
-<%- end %>
-
-<%= render @post %>

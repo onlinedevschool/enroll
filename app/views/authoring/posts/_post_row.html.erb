@@ -1,7 +1,0 @@
-<tr>
-<td>
-  <%= check_box_tag :published?, '', post_row.published?, disabled: true %>
-  | <%= link_to "edit", edit_authoring_post_path(post_row.permalink) %></td>
-  <td class="post-title"><%= link_to post_row.title, authoring_post_path(post_row.permalink) %></td>
-  <td class="post-created-at"><%= post_row.created_at.to_s(:short) %></td>
-</tr>
