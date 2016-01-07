@@ -70,7 +70,7 @@ class Enrollment < ActiveRecord::Base
 
   def self.charge_billable_accounts
     billable.map do |e|
-      e.payments.create(amount: next_payment_amount).tap do |p|
+      e.payments.create(amount: e.next_payment_amount).tap do |p|
         p.charge
       end
     end
@@ -167,3 +167,4 @@ class Enrollment < ActiveRecord::Base
   end
 
 end
+
