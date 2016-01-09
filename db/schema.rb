@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221233238) do
+ActiveRecord::Schema.define(version: 20160109045622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20151221233238) do
     t.datetime "rejected_at"
     t.datetime "interview_invitation_sent_at"
     t.boolean  "paused",                       default: false, null: false
+    t.string   "promo_code"
   end
 
   create_table "instructors", force: :cascade do |t|

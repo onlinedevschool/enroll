@@ -37,7 +37,7 @@ private
   end
 
   def enrollment_params
-    attrs = %w[email name weeks pay_option why github_url]
+    attrs = %w[promo_code email name weeks pay_option why github_url]
     params.require(:enrollment).permit(attrs)
   end
 end
