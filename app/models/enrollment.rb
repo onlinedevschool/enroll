@@ -2,7 +2,7 @@ class Enrollment < ActiveRecord::Base
   WEEK_OPTIONS     = [12, 18, 36]
   PRIVATE_SESSIONS = [3, 2, 1]
   FINANCE_FEE      = 1000
-  PAYMENT_COUNT    = 5
+  PAYMENT_COUNT    = 6
   BASE_PRICE       = 4988
 
   has_many   :payments, dependent: :destroy
@@ -17,9 +17,6 @@ class Enrollment < ActiveRecord::Base
 
   validates :why,         presence: true
 
-
-  validates :financed,    inclusion: { in: [true, false],
-                                       message: "must be true or false" }
 
   default_scope -> {
     oldest
@@ -77,7 +74,7 @@ class Enrollment < ActiveRecord::Base
   end
 
   def self.payment_price
-    financed_price / 5
+    financed_price / PAYMENT_COUNT
   end
 
   def self.financed_price
