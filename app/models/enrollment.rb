@@ -1,6 +1,4 @@
 class Enrollment < ActiveRecord::Base
-  WEEK_OPTIONS     = [12, 18, 36]
-  PRIVATE_SESSIONS = [3, 2, 1]
   FINANCE_FEE      = 1000
   PAYMENT_COUNT    = 6
   BASE_PRICE       = 4988
@@ -14,9 +12,6 @@ class Enrollment < ActiveRecord::Base
                           format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
   validates :name,        presence: true
-
-  validates :why,         presence: true
-
 
   default_scope -> {
     oldest
@@ -118,19 +113,6 @@ class Enrollment < ActiveRecord::Base
     refunded_at.to_date
   end
 
-  def active?
-    stripe_id.present? && !refunded? && weeks_left > 0
-  end
-
-  def weeks_left
-    remaining = weeks - (DateTime.now.to_i - payments.first.created_at.to_i)/60/60/24/7
-    remaining < 0 ? 0 : remaining
-  end
-
-  def private_sessions_left
-    (PRIVATE_SESSIONS[WEEK_OPTIONS.index(weeks)] * weeks) - student.private_sessions.count
-  end
-
   def refunded?
     refunded_at.present?
   end
@@ -148,7 +130,7 @@ class Enrollment < ActiveRecord::Base
   end
 
   def adjusted_price
-    financed? ? Enrollment.financed_price : price
+    financed? ? price + FINANCE_FEE : price
   end
 
   def next_payment_amount
