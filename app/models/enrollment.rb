@@ -1,7 +1,7 @@
 class Enrollment < ActiveRecord::Base
   FINANCE_FEE      = 1000
   PAYMENT_COUNT    = 6
-  BASE_PRICE       = 4988
+  BASE_PRICE       = 7500
 
   has_many   :payments, dependent: :destroy
   has_one    :student

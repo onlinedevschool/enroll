@@ -5,13 +5,12 @@ class Payment < ActiveRecord::Base
     order(created_at: :asc)
   }
 
-
   def charge(token=nil)
     set_payment_source if token
     charge = Stripe::Charge.create(
       customer: enrollment.stripe_id,
-      currency: 'usd',
-      amount: amount * 100,
+      currency: 'mxn',
+      amount: ((amount * 100).to_f * enrollment.multiplier).to_i,
       description: "DevSchool (devschool.rocks)"
     )
     update_attribute(:auth_code, charge.id)

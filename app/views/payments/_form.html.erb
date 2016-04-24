@@ -42,7 +42,7 @@
   <div class='col-xs-12 form-row'>
     <div class='form-group'>
       <button class='form-control btn btn-primary submit-button' type='submit'>Pay 
-      <%= number_to_currency(@amount) %> now</button>
+      <%= number_to_currency(@total) %> now</button>
     </div>
   </div>
   <div class='col-xs-12 form-row'>
@@ -53,6 +53,8 @@
       <img height="60" src='<%= asset_path("ssl.png") %>'>
       </p>
 
+<p class="small">Please note: Our bank is in Mexico and therefore charges peso as the currency. However that number
+is calculated based on todays exchange rate and your total. It might be off by a few cents one way or the other</p>
       <p class="small">All payments are handled by <a href="https://stripe.com" rel="nofollow">Stripe</a> and at no time do we store
       your card on our servers. When you click this button we send the form data off to
       <a href="https://stripe.com" rel="nofollow">Stripe</a> directly,

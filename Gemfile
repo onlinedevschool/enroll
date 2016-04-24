@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.2.3"
+ruby "2.3.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
@@ -18,6 +18,8 @@ gem 'rack-cors', :require => 'rack/cors'
 gem "therubyracer"
 gem "less-rails"
 
+gem 'money'
+
 gem "letter_opener", :group => :development
 
 # use Bootstrap
@@ -30,14 +32,7 @@ gem "devise"
 # Use responders gem in controllers
 gem 'responders'
 
-gem 'html-pipeline'
-gem 'github-markdown'
-gem 'github-linguist'
-gem 'pygments.rb'
-
 gem 'bootstrap_form'
-
-gem 'gravtastic'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
