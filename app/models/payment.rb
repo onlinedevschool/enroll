@@ -7,6 +7,8 @@ class Payment < ActiveRecord::Base
 
   def charge(token=nil)
     set_payment_source if token
+    enrollment.multiplier = ExchangeService.()
+    enrollment.save
     charge = Stripe::Charge.create(
       customer: enrollment.stripe_id,
       currency: 'mxn',
