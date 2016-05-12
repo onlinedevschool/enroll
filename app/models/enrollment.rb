@@ -134,7 +134,7 @@ class Enrollment < ActiveRecord::Base
   end
 
   def next_payment_amount
-    financed? ? price / PAYMENT_COUNT : price
+    layaway ? price / 2 : price
   end
 
   def initial_payment_made?

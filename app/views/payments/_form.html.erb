@@ -2,7 +2,7 @@
 
 <%= form_for [@enrollment, @payment], html: { class: "form-horizontal payment",
                                       "data-stripe-publishable-key": ENV.fetch("STRIPE_PUBLISHABLE_KEY")} do |f| %>
-  <%= render partial: @enrollment.financed? ? "payments" : "prepay" %>
+  <%= render partial: @enrollment.layaway ? "layaway" : "prepay" %>
 
   <div class='form-row'>
     <div class='col-xs-12 form-group required'>
@@ -42,7 +42,7 @@
   <div class='col-xs-12 form-row'>
     <div class='form-group'>
       <button class='form-control btn btn-primary submit-button' type='submit'>Pay 
-      <%= number_to_currency(@total) %> now</button>
+      <%= number_to_currency(@amount) %> now</button>
     </div>
   </div>
   <div class='col-xs-12 form-row'>
