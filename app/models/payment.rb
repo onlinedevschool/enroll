@@ -6,7 +6,6 @@ class Payment < ActiveRecord::Base
   }
 
   def charge(token=nil)
-    byebug
     set_payment_source if token
     enrollment.multiplier = ExchangeService.()
     enrollment.save
